@@ -31,4 +31,7 @@ step compile mix compile --warnings-as-errors
 step assets mix assets.deploy
 step release mix release anime --path "$check_dir/package"
 step package-preflight elixir dev/release_package_smoke.exs "$check_dir/package"
+if [[ -n ${GITHUB_OUTPUT:-} ]]; then
+  printf 'package=%s\n' "$check_dir/package" >> "$GITHUB_OUTPUT"
+fi
 printf '%s\n' 'Package checked; no application boot, database, MinIO, SMTP, container or staging acceptance.'

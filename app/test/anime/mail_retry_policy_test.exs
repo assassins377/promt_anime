@@ -2,6 +2,12 @@ defmodule Anime.MailRetryPolicyTest do
   use ExUnit.Case, async: true
   alias Anime.Workers.Mail
 
+  test "web queue concurrency matches the service queue limits" do
+    config = Config.Reader.read!("config/config.exs", env: :dev, target: :host)
+    oban = config |> Keyword.fetch!(:anime) |> Keyword.fetch!(Oban)
+    assert Keyword.fetch!(oban, :queues) == [mailers: 10, maintenance: 2]
+  end
+
   test "mail uses its specified finite timeout and five attempts" do
     assert Mail.timeout(%Oban.Job{}) == 30_000
     job = Mail.new(%{token_id: 123, locale: "ru"})

@@ -65,13 +65,15 @@ jobs:
             /tmp/anime-queue1-check.*/tests-coverage.log
             app/cover/coverage.json
       - name: Build compatible release
+        id: release
         run: bash dev/check_release_local.sh
       - name: Package the release without test databases or credentials
+        env:
+          RELEASE_PACKAGE: ${{ steps.release.outputs.package }}
         run: |
-          package=$(find /tmp -maxdepth 2 -type d -path '/tmp/anime-release-check.*/package')
-          test -n "$package"
-          test "$(printf '%s\n' "$package" | wc -l)" -eq 1
-          tar -C "$package" -czf /tmp/anime-staging-release.tar.gz .
+          test -d "$RELEASE_PACKAGE"
+          test -x "$RELEASE_PACKAGE/bin/anime"
+          tar -C "$RELEASE_PACKAGE" -czf /tmp/anime-staging-release.tar.gz .
           sha256sum /tmp/anime-staging-release.tar.gz > /tmp/anime-staging-release.sha256
           git diff --exit-code
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

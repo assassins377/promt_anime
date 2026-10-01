@@ -23,7 +23,7 @@ config :anime, Oban,
   repo: Anime.Repo,
   shutdown_grace_period: 60_000,
   lifeline: [rescue_after: :timer.hours(8), interval: :timer.minutes(1)],
-  queues: [mailers: 5, maintenance: 2],
+  queues: [mailers: 10, maintenance: 2],
   plugins: [
     {Oban.Plugins.Cron,
      crontab: [
