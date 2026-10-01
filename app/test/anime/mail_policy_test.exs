@@ -4,7 +4,7 @@ defmodule Anime.MailPolicyTest do
 
   setup do
     previous =
-      for key <- [:app_env, :staging_mail_allowlist],
+      for key <- [:app_env, :staging_mail_allowlist, :mail_return_path],
           do: {key, Application.fetch_env(:anime, key)}
 
     on_exit(fn ->
@@ -16,6 +16,7 @@ defmodule Anime.MailPolicyTest do
       end
     end)
 
+    Application.put_env(:anime, :mail_return_path, "bounce@localhost")
     :ok
   end
 

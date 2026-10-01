@@ -191,13 +191,18 @@ defmodule Anime.Workers.Mail do
   end
 
   defp deliver_mail(to, subject, body) do
-    from = Application.get_env(:anime, :mail_from, {"Anime", "no-reply@localhost"})
+    with {:ok, from} <- Anime.MailSender.load() do
+      deliver_with_sender(to, subject, body, from)
+    end
+  end
 
+  defp deliver_with_sender(to, subject, body, from) do
     case new()
          |> to(to)
          |> from(from)
          |> subject(subject)
          |> text_body(body)
+         |> Anime.MailSender.envelope()
          |> Mailer.deliver() do
       {:ok, _} ->
         :ok

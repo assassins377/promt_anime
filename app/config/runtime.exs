@@ -2,6 +2,7 @@ import Config
 
 if config_env() != :test do
   runtime = Anime.RuntimeConfig.load!()
+  mail = Anime.MailConfig.load!(System.get_env(), runtime.environment, runtime.host)
 
   config :anime, :app_env, runtime.environment
 
@@ -18,8 +19,8 @@ if config_env() != :test do
   config :anime, :site_origin, runtime.origin
   config :anime, :minio_origin, runtime.minio_public_url
   config :anime, :mx_lookup, true
-  config :anime, :mail_from, {"Anime", "no-reply@#{runtime.host}"}
-  config :anime, Anime.Mailer, adapter: Swoosh.Adapters.Local
+  config :anime, :mail_return_path, mail.return_path
+  config :anime, Anime.Mailer, mail.options
   config :logger, level: runtime.log_level
 
   config :anime, Anime.Repo,
