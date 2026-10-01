@@ -10,12 +10,34 @@ defmodule Anime.MailLoggingTest do
 
     def deliver(_, config) do
       case config[:mode] do
-        :error -> {:error, "PRIVATE-MAIL-SENTINEL"}
-        :nil_error -> {:error, nil}
-        :raise -> raise "PRIVATE-MAIL-SENTINEL"
-        :throw -> throw("PRIVATE-MAIL-SENTINEL")
-        :exit -> exit("PRIVATE-MAIL-SENTINEL")
-        _ -> {:ok, %{receipt: "PRIVATE-MAIL-SENTINEL"}}
+        :error ->
+          {:error, "PRIVATE-MAIL-SENTINEL"}
+
+        :smtp_permanent_connect ->
+          {:error,
+           {:no_more_hosts, {:permanent_failure, "private-relay", "550 PRIVATE-MAIL-SENTINEL"}}}
+
+        :smtp_permanent_send ->
+          {:error, {:send, {:permanent_failure, "private-relay", "550 PRIVATE-MAIL-SENTINEL"}}}
+
+        :smtp_temporary ->
+          {:error,
+           {:retries_exceeded, {:temporary_failure, "private-relay", "450 PRIVATE-MAIL-SENTINEL"}}}
+
+        :nil_error ->
+          {:error, nil}
+
+        :raise ->
+          raise "PRIVATE-MAIL-SENTINEL"
+
+        :throw ->
+          throw("PRIVATE-MAIL-SENTINEL")
+
+        :exit ->
+          exit("PRIVATE-MAIL-SENTINEL")
+
+        _ ->
+          {:ok, %{receipt: "PRIVATE-MAIL-SENTINEL"}}
       end
     end
 
@@ -170,6 +192,36 @@ defmodule Anime.MailLoggingTest do
     assert completed["oban_attempt"] == 2
     assert LogContext.current() == "unrelated-caller-request-67890"
   end
+
+  for mode <- [:smtp_permanent_connect, :smtp_permanent_send, :smtp_temporary] do
+    test "SMTP outcome #{mode} controls retry without saving transport details" do
+      mode = unquote(mode)
+      u = user()
+      job = Repo.one!(from j in Oban.Job, order_by: [desc: j.id], limit: 1)
+      Application.put_env(:anime, Mailer, adapter: Adapter, mode: mode)
+
+      output = capture_log(fn -> Oban.drain_queue(queue: :mailers) end)
+      saved = Repo.get!(Oban.Job, job.id)
+      assert saved.attempt == 1
+      expected = smtp_expected_state(mode)
+      assert saved.state == expected
+
+      for private <- [@secret, u.email, "private-relay"] do
+        refute output =~ private
+        refute inspect(saved.errors) =~ private
+      end
+
+      if expected == "discarded" do
+        assert %{success: 0, failure: 0} =
+                 Oban.drain_queue(queue: :mailers, with_scheduled: true)
+
+        assert Repo.get!(Oban.Job, job.id).attempt == 1
+      end
+    end
+  end
+
+  defp smtp_expected_state(:smtp_temporary), do: "retryable"
+  defp smtp_expected_state(_), do: "discarded"
 
   test "skipped expired token finishes job without inventing a mail acceptance" do
     user()

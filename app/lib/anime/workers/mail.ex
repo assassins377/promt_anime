@@ -141,8 +141,15 @@ defmodule Anime.Workers.Mail do
          |> subject(subject)
          |> text_body(body)
          |> Mailer.deliver() do
-      {:ok, _} -> :ok
-      {:error, _} -> {:error, :delivery_failed}
+      {:ok, _} ->
+        :ok
+
+      {:error, {phase, {:permanent_failure, _host, _detail}}}
+      when phase in [:no_more_hosts, :send, :retries_exceeded] ->
+        {:discard, :permanent_delivery_failure}
+
+      {:error, _} ->
+        {:error, :delivery_failed}
     end
   end
 end
