@@ -3,6 +3,15 @@ defmodule Anime.Workers.Mail do
   use Gettext, backend: AnimeWeb.Gettext
   import Swoosh.Email
   alias Anime.{Repo, Mailer, Accounts.User, Accounts.UserToken, Accounts.Tokens}
+
+  @impl Oban.Worker
+  def timeout(_job), do: :timer.seconds(30)
+
+  @impl Oban.Worker
+  def backoff(%Oban.Job{attempt: attempt}) do
+    Enum.at([60, 300, 900, 3600, 7200], max(attempt - 1, 0), 7200)
+  end
+
   @impl true
   def perform(%Oban.Job{args: %{"token_id" => id} = args}) do
     Gettext.put_locale(AnimeWeb.Gettext, Map.get(args, "locale", "ru"))

@@ -118,13 +118,15 @@ printf '%s migrations: up / full down / up / no-op passed.\n' "$migration_count"
 
 # Finish independent checks even if a test, coverage threshold or external audit fails.
 failed=0
+# The CSP/HTTP tests serve these files. A clean checkout has no compiled assets;
+# never let leftover files from a previous local run hide this dependency.
+step assets mix assets.build || failed=1
 step tests-coverage mix test --cover --warnings-as-errors --seed 100105 || failed=1
 # Keep this run's report when a later run replaces app/cover.
 if [[ -d cover ]]; then
   cp -R cover "$check_dir/cover"
 fi
 step seed-second mix run --no-compile dev/seed_smoke.exs || failed=1
-step assets mix assets.build || failed=1
 step assets-deploy mix assets.deploy || failed=1
 step js-table node test/js/admin_table_test.mjs || failed=1
 step js-shell node test/js/admin_shell_test.mjs || failed=1
