@@ -13,7 +13,37 @@ defmodule Anime.Workers.Mail do
   end
 
   @impl true
-  def perform(%Oban.Job{args: %{"token_id" => id} = args}) do
+  def perform(%Oban.Job{} = job) do
+    type = mail_type(job.args)
+    result = deliver(job)
+
+    if match?({:discard, _}, result) or
+         (match?({:error, _}, result) and job.attempt >= job.max_attempts) do
+      Anime.Audit.record(nil, "mail_delivery_failed", type, job.id, :error, %{
+        actor_label: "system:mail"
+      })
+    end
+
+    result
+  end
+
+  defp mail_type(%{"token_id" => id}) do
+    case Repo.get(UserToken, id) do
+      %UserToken{context: :confirm} -> "confirm_email"
+      %UserToken{context: :change_email} -> "change_email_confirm"
+      %UserToken{context: :reset_password} -> "password_reset"
+      %UserToken{context: :delete_cancel} -> "account_delete_cancel"
+      _ -> nil
+    end
+  end
+
+  defp mail_type(%{"kind" => "email_change_notice"}), do: "change_email_notice"
+
+  defp mail_type(%{"kind" => kind})
+       when kind in ["password_changed", "account_blocked", "login_after_block"],
+       do: kind
+
+  defp deliver(%Oban.Job{args: %{"token_id" => id} = args}) do
     Gettext.put_locale(AnimeWeb.Gettext, Map.get(args, "locale", "ru"))
 
     with %UserToken{} = token <- Repo.get(UserToken, id),
@@ -48,9 +78,9 @@ defmodule Anime.Workers.Mail do
     end
   end
 
-  def perform(%Oban.Job{
-        args: %{"audit_id" => id, "kind" => "email_change_notice", "locale" => locale}
-      }) do
+  defp deliver(%Oban.Job{
+         args: %{"audit_id" => id, "kind" => "email_change_notice", "locale" => locale}
+       }) do
     Gettext.put_locale(AnimeWeb.Gettext, locale)
 
     case Repo.get(Anime.Audit, id) do
@@ -68,9 +98,9 @@ defmodule Anime.Workers.Mail do
     end
   end
 
-  def perform(%Oban.Job{
-        args: %{"user_id" => id, "kind" => "password_changed", "locale" => locale}
-      }) do
+  defp deliver(%Oban.Job{
+         args: %{"user_id" => id, "kind" => "password_changed", "locale" => locale}
+       }) do
     Gettext.put_locale(AnimeWeb.Gettext, locale)
 
     case Repo.get(User, id) do
@@ -86,8 +116,8 @@ defmodule Anime.Workers.Mail do
     end
   end
 
-  def perform(%Oban.Job{args: %{"audit_id" => id, "kind" => kind, "locale" => locale}})
-      when kind in ["account_blocked", "login_after_block"] do
+  defp deliver(%Oban.Job{args: %{"audit_id" => id, "kind" => kind, "locale" => locale}})
+       when kind in ["account_blocked", "login_after_block"] do
     Gettext.put_locale(AnimeWeb.Gettext, locale)
     action = if kind == "account_blocked", do: "users.user.ban", else: "users.user.unban"
 

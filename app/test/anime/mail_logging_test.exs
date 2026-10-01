@@ -205,6 +205,22 @@ defmodule Anime.MailLoggingTest do
       assert saved.attempt == 1
       expected = smtp_expected_state(mode)
       assert saved.state == expected
+      failures = Repo.all(from a in Anime.Audit, where: a.action == "mail_delivery_failed")
+
+      if expected == "discarded" do
+        [entry] = failures
+        assert entry.object_type == "confirm_email"
+        assert entry.object_id == to_string(job.id)
+        assert entry.result == :error
+        assert entry.actor_label == "system:mail"
+        assert is_nil(entry.user_id)
+        assert is_nil(entry.old_value)
+        assert is_nil(entry.new_value)
+        refute inspect(entry) =~ u.email
+        refute inspect(entry) =~ @secret
+      else
+        assert failures == []
+      end
 
       for private <- [@secret, u.email, "private-relay"] do
         refute output =~ private
@@ -222,6 +238,22 @@ defmodule Anime.MailLoggingTest do
 
   defp smtp_expected_state(:smtp_temporary), do: "retryable"
   defp smtp_expected_state(_), do: "discarded"
+
+  test "exhausted temporary mail failure is audited without modifying the user" do
+    u = user()
+    job = Repo.one!(from j in Oban.Job, order_by: [desc: j.id], limit: 1)
+    Repo.update_all(from(j in Oban.Job, where: j.id == ^job.id), set: [max_attempts: 1])
+    Application.put_env(:anime, Mailer, adapter: Adapter, mode: :smtp_temporary)
+    capture_log(fn -> Oban.drain_queue(queue: :mailers) end)
+    assert Repo.get!(Oban.Job, job.id).state == "discarded"
+    entry = Repo.one!(from a in Anime.Audit, where: a.action == "mail_delivery_failed")
+    assert entry.object_type == "confirm_email"
+    assert entry.object_id == to_string(job.id)
+    assert entry.result == :error
+    assert Repo.get!(Anime.Accounts.User, u.id).status == u.status
+    refute inspect(entry) =~ u.email
+    refute inspect(entry) =~ @secret
+  end
 
   test "skipped expired token finishes job without inventing a mail acceptance" do
     user()
