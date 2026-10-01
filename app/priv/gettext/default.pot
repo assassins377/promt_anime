@@ -1,0 +1,1710 @@
+## This file is a PO Template file.
+##
+## "msgid"s here are often extracted from source code.
+## Add new messages manually only if they're dynamic
+## messages that can't be statically extracted.
+##
+## Run "mix gettext.extract" to bring this file up to
+## date. Leave "msgstr"s empty as changing them here has no
+## effect: edit them in PO (.po) files instead.
+#
+msgid ""
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:169
+#, elixir-autogen, elixir-format
+msgid "Email или ник"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:232
+#, elixir-autogen, elixir-format
+msgid "Email не подтверждён"
+msgstr ""
+
+#: lib/anime_web/controllers/session_controller.ex:65
+#, elixir-autogen, elixir-format
+msgid "Email подтверждён"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:267
+#, elixir-autogen, elixir-format
+msgid "Автоматически по сроку"
+msgstr ""
+
+#: lib/anime_web/admin_navigation.ex:49
+#: lib/anime_web/components/public_components.ex:93
+#: lib/anime_web/live/profile_live.ex:223
+#, elixir-autogen, elixir-format
+msgid "Админ-панель"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:139
+#: lib/anime_web/components/admin_components.ex:237
+#, elixir-autogen, elixir-format
+msgid "Администрирование"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:237
+#, elixir-autogen, elixir-format
+msgid "Аккаунт готов"
+msgstr ""
+
+#: lib/anime/workers/mail.ex:90
+#, elixir-autogen, elixir-format
+msgid "Аккаунт заблокирован"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:10
+#: lib/anime_web/components/admin_components.ex:357
+#: lib/anime_web/live/user_admin_live.ex:360
+#: lib/anime_web/live/users_live.ex:251
+#, elixir-autogen, elixir-format
+msgid "Активен"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:305
+#, elixir-autogen, elixir-format
+msgid "Активность"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:314
+#, elixir-autogen, elixir-format
+msgid "Активные сессии"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:325
+#, elixir-autogen, elixir-format
+msgid "Активные фильтры"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:516
+#, elixir-autogen, elixir-format
+msgid "Активных сессий нет"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:363
+#: lib/anime_web/live/user_admin_live.ex:406
+#: lib/anime_web/live/user_admin_live.ex:446
+#: lib/anime_web/live/user_admin_live.ex:601
+#: lib/anime_web/live/users_live.ex:268
+#: lib/anime_web/live/users_live.ex:489
+#, elixir-autogen, elixir-format
+msgid "Бессрочно"
+msgstr ""
+
+#: lib/anime_web/components/layouts.ex:61
+#: lib/anime_web/page_titles.ex:29
+#, elixir-autogen, elixir-format
+msgid "Блог"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:262
+#: lib/anime_web/live/user_admin_live.ex:588
+#, elixir-autogen, elixir-format
+msgid "Блокировка"
+msgstr ""
+
+#: lib/anime_web/admin_navigation.ex:14
+#: lib/anime_web/live/user_admin_live.ex:299
+#: lib/anime_web/live/user_admin_live.ex:396
+#: lib/anime_web/live/users_live.ex:217
+#: lib/anime_web/live/users_live.ex:370
+#, elixir-autogen, elixir-format
+msgid "Блокировки"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:576
+#, elixir-autogen, elixir-format
+msgid "Будут завершены обычные сессии и входы «Запомнить меня». Почтовые ссылки не изменятся."
+msgstr ""
+
+#: lib/anime_web/live/placeholder_live.ex:15
+#: lib/anime_web/page_titles.ex:37
+#, elixir-autogen, elixir-format
+msgid "В разработке"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:118
+#, elixir-autogen, elixir-format
+msgid "Ваше пространство"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:184
+#, elixir-autogen, elixir-format
+msgid "Введите свой ник без изменений"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:370
+#, elixir-autogen, elixir-format
+msgid "Введите свой ник для подтверждения"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:576
+#, elixir-autogen, elixir-format
+msgid "Введите точный ник пользователя"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:380
+#, elixir-autogen, elixir-format
+msgid "Возраст подтверждён"
+msgstr ""
+
+#: lib/anime_web/components/public_components.ex:53
+#, elixir-autogen, elixir-format
+msgid "Войти"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:99
+#: lib/anime_web/page_titles.ex:13
+#, elixir-autogen, elixir-format
+msgid "Восстановление пароля"
+msgstr ""
+
+#: lib/anime_web/live/matrix_live.ex:166
+#: lib/anime_web/live/matrix_live.ex:174
+#: lib/anime_web/live/permissions_live.ex:59
+#: lib/anime_web/live/users_live.ex:237
+#: lib/anime_web/live/users_live.ex:259
+#: lib/anime_web/live/users_live.ex:266
+#: lib/anime_web/live/users_live.ex:275
+#, elixir-autogen, elixir-format
+msgid "Все"
+msgstr ""
+
+#: lib/anime_web/admin_navigation.ex:13
+#, elixir-autogen, elixir-format
+msgid "Все пользователи"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:357
+#, elixir-autogen, elixir-format
+msgid "Все сессии завершатся. В течение 30 суток удаление можно отменить по ссылке из письма."
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:119
+#, elixir-autogen, elixir-format
+msgid "Всё, что вы любите, — в одном месте."
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:572
+#, elixir-autogen, elixir-format
+msgid "Вход будет закрыт сразу. Окончательное удаление — через 30 суток; до этого оператор может отменить запрос."
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:278
+#, elixir-autogen, elixir-format
+msgid "Вход в браузере"
+msgstr ""
+
+#: lib/anime_web/controllers/session_controller.ex:57
+#, elixir-autogen, elixir-format
+msgid "Вы вышли из аккаунта"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:586
+#, elixir-autogen, elixir-format
+msgid "Выберите роль"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:349
+#: lib/anime_web/live/users_live.ex:562
+#, elixir-autogen, elixir-format
+msgid "Выбрано"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:459
+#, elixir-autogen, elixir-format
+msgid "Выбрать пользователя"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:381
+#, elixir-autogen, elixir-format
+msgid "Выбрать текущую страницу"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:211
+#: lib/anime_web/components/public_components.ex:131
+#: lib/anime_web/live/profile_live.ex:388
+#, elixir-autogen, elixir-format
+msgid "Выйти"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:595
+#, elixir-autogen, elixir-format
+msgid "Выполняется…"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:366
+#: lib/anime_web/live/user_admin_live.ex:269
+#, elixir-autogen, elixir-format
+msgid "Да"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:300
+#, elixir-autogen, elixir-format
+msgid "Далее"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:458
+#: lib/anime_web/live/user_admin_live.ex:427
+#, elixir-autogen, elixir-format
+msgid "Дата"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:399
+#: lib/anime_web/live/users_live.ex:429
+#, elixir-autogen, elixir-format
+msgid "Дата блокировки"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:305
+#, elixir-autogen, elixir-format
+msgid "Дата блокировки до"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:299
+#, elixir-autogen, elixir-format
+msgid "Дата блокировки от"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:402
+#: lib/anime_web/live/user_admin_live.ex:430
+#: lib/anime_web/live/users_live.ex:434
+#, elixir-autogen, elixir-format
+msgid "Дата окончания"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:362
+#: lib/anime_web/live/users_live.ex:419
+#, elixir-autogen, elixir-format
+msgid "Дата регистрации"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:306
+#, elixir-autogen, elixir-format
+msgid "Дата регистрации до"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:300
+#, elixir-autogen, elixir-format
+msgid "Дата регистрации от"
+msgstr ""
+
+#: lib/anime_web/controllers/public_profile_html.ex:14
+#, elixir-autogen, elixir-format
+msgid "Дата регистрации:"
+msgstr ""
+
+#: lib/anime_web/admin_navigation.ex:7
+#: lib/anime_web/admin_navigation.ex:9
+#: lib/anime_web/live/admin_live.ex:24
+#, elixir-autogen, elixir-format
+msgid "Дашборд"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:353
+#: lib/anime_web/components/admin_components.ex:407
+#: lib/anime_web/components/admin_components.ex:465
+#: lib/anime_web/live/user_admin_live.ex:428
+#, elixir-autogen, elixir-format
+msgid "Действие"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:267
+#: lib/anime_web/live/user_admin_live.ex:488
+#: lib/anime_web/live/users_live.ex:445
+#, elixir-autogen, elixir-format
+msgid "Действия"
+msgstr ""
+
+#: lib/anime/workers/mail.ex:52
+#, elixir-autogen, elixir-format
+msgid "Для вашего аккаунта запрошена смена email. Если это были не вы, восстановите доступ."
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:605
+#, elixir-autogen, elixir-format
+msgid "Для причины «Другое» нужен комментарий от 10 до 300 символов."
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:133
+#, elixir-autogen, elixir-format
+msgid "Для продолжения измените пароль владельца."
+msgstr ""
+
+#: lib/anime_web/components/public_components.ex:45
+#: lib/anime_web/components/public_components.ex:46
+#: lib/anime_web/components/public_components.ex:99
+#: lib/anime_web/live/content_placeholder_live.ex:10
+#, elixir-autogen, elixir-format
+msgid "Добавить аниме"
+msgstr ""
+
+#: lib/anime/workers/mail.ex:91
+#, elixir-autogen, elixir-format
+msgid "Доступ восстановлен"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:276
+#, elixir-autogen, elixir-format
+msgid "Другое"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:32
+#, elixir-autogen, elixir-format
+msgid "Если отправка разрешена, письмо будет доставлено"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:54
+#, elixir-autogen, elixir-format
+msgid "Если такой email зарегистрирован, письмо отправлено"
+msgstr ""
+
+#: lib/anime_web/components/layouts.ex:60
+#: lib/anime_web/page_titles.ex:28
+#, elixir-autogen, elixir-format
+msgid "Жанры"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:10
+#: lib/anime_web/components/admin_components.ex:358
+#: lib/anime_web/live/user_admin_live.ex:360
+#: lib/anime_web/live/users_live.ex:256
+#, elixir-autogen, elixir-format
+msgid "Заблокирован"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:325
+#: lib/anime_web/live/users_live.ex:512
+#: lib/anime_web/live/users_live.ex:517
+#, elixir-autogen, elixir-format
+msgid "Заблокировать"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:218
+#, elixir-autogen, elixir-format
+msgid "Забыли пароль?"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:316
+#, elixir-autogen, elixir-format
+msgid "Завершение остальных сессий также отключает все сохранённые входы «запомнить меня»."
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:349
+#, elixir-autogen, elixir-format
+msgid "Завершить"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:337
+#: lib/anime_web/live/users_live.ex:203
+#, elixir-autogen, elixir-format
+msgid "Завершить все сессии"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:619
+#, elixir-autogen, elixir-format
+msgid "Завершить все сессии этого пользователя?"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:321
+#, elixir-autogen, elixir-format
+msgid "Завершить все, кроме текущей"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:620
+#, elixir-autogen, elixir-format
+msgid "Завершить выбранную сессию?"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:508
+#: lib/anime_web/live/user_admin_live.ex:509
+#, elixir-autogen, elixir-format
+msgid "Завершить сессию"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:21
+#, elixir-autogen, elixir-format
+msgid "Загрузка списка…"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:144
+#, elixir-autogen, elixir-format
+msgid "Закрыть меню"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:86
+#, elixir-autogen, elixir-format
+msgid "Записей пока нет"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:209
+#: lib/anime_web/live/profile_live.ex:329
+#: lib/anime_web/live/user_admin_live.ex:279
+#, elixir-autogen, elixir-format
+msgid "Запомнить меня"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:275
+#, elixir-autogen, elixir-format
+msgid "Запрещённый контент"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:380
+#, elixir-autogen, elixir-format
+msgid "Запросить удаление аккаунта"
+msgstr ""
+
+#: lib/anime/workers/mail.ex:51
+#, elixir-autogen, elixir-format
+msgid "Запрошена смена email"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:283
+#, elixir-autogen, elixir-format
+msgid "Значок"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:335
+#, elixir-autogen, elixir-format
+msgid "Из них изменены другим оператором"
+msgstr ""
+
+#: lib/anime_web/components/public_components.ex:91
+#: lib/anime_web/controllers/public_profile_html.ex:26
+#: lib/anime_web/page_titles.ex:34
+#, elixir-autogen, elixir-format
+msgid "Избранное"
+msgstr ""
+
+#: lib/anime_web/controllers/public_profile_html.ex:29
+#, elixir-autogen, elixir-format
+msgid "Избранное будет доступно после подключения каталога и закладок."
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:383
+#, elixir-autogen, elixir-format
+msgid "Избранное видно всем"
+msgstr ""
+
+#: lib/anime_web/controllers/public_profile_html.ex:27
+#, elixir-autogen, elixir-format
+msgid "Избранное скрыто"
+msgstr ""
+
+#: lib/anime_web/live/matrix_live.ex:258
+#, elixir-autogen, elixir-format
+msgid "Изменений нет"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:138
+#, elixir-autogen, elixir-format
+msgid "Изменения сохранены"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:291
+#: lib/anime_web/live/roles_live.ex:292
+#, elixir-autogen, elixir-format
+msgid "Изменить"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:263
+#, elixir-autogen, elixir-format
+msgid "Изменить ник"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:311
+#, elixir-autogen, elixir-format
+msgid "Изменить пароль"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:334
+#, elixir-autogen, elixir-format
+msgid "Изменить роль"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:487
+#, elixir-autogen, elixir-format
+msgid "Истекает"
+msgstr ""
+
+#: lib/anime_web/admin_navigation.ex:15
+#: lib/anime_web/components/admin_components.ex:385
+#: lib/anime_web/components/admin_components.ex:444
+#: lib/anime_web/live/user_activity_live.ex:9
+#, elixir-autogen, elixir-format
+msgid "История активности"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:384
+#: lib/anime_web/live/user_activity_live.ex:49
+#, elixir-autogen, elixir-format
+msgid "История активности пользователей"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:415
+#: lib/anime_web/live/user_admin_live.ex:422
+#, elixir-autogen, elixir-format
+msgid "История блокировок"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:455
+#, elixir-autogen, elixir-format
+msgid "История блокировок пуста"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:343
+#, elixir-autogen, elixir-format
+msgid "Исходное название системной роли переводится автоматически. Заданное вами название показывается без перевода."
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:134
+#, elixir-autogen, elixir-format
+msgid "К содержимому"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:571
+#, elixir-autogen, elixir-format
+msgid "Каждая запись проверяется отдельно. Отказ по одной не отменяет остальные изменения."
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:180
+#: lib/anime_web/components/public_components.ex:111
+#, elixir-autogen, elixir-format
+msgid "Как в системе"
+msgstr ""
+
+#: lib/anime_web/live/admin_live.ex:25
+#, elixir-autogen, elixir-format
+msgid "Каркас доступа готов. Разделы управления появятся по порядку реализации."
+msgstr ""
+
+#: lib/anime_web/components/layouts.ex:59
+#: lib/anime_web/controllers/page_html.ex:12
+#: lib/anime_web/page_titles.ex:27
+#, elixir-autogen, elixir-format
+msgid "Каталог"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:238
+#, elixir-autogen, elixir-format
+msgid "Каталог, избранное и история появятся в следующих очередях."
+msgstr ""
+
+#: lib/anime_web/live/permissions_live.ex:91
+#: lib/anime_web/live/roles_live.ex:252
+#: lib/anime_web/live/roles_live.ex:337
+#, elixir-autogen, elixir-format
+msgid "Код"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:339
+#, elixir-autogen, elixir-format
+msgid "Код системной роли менять нельзя"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:604
+#, elixir-autogen, elixir-format
+msgid "Комментарий оператора"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:485
+#, elixir-autogen, elixir-format
+msgid "Контекст"
+msgstr ""
+
+#: lib/anime_web/components/layouts.ex:64
+#: lib/anime_web/live/profile_live.ex:300
+#: lib/anime_web/page_titles.ex:33
+#, elixir-autogen, elixir-format
+msgid "Конфиденциальность"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:347
+#: lib/anime_web/live/user_admin_live.ex:409
+#: lib/anime_web/live/users_live.ex:273
+#: lib/anime_web/live/users_live.ex:435
+#, elixir-autogen, elixir-format
+msgid "Кто заблокировал"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:212
+#, elixir-autogen, elixir-format
+msgid "Личный кабинет"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:219
+#, elixir-autogen, elixir-format
+msgid "Локальная версия · очередь 1"
+msgstr ""
+
+#: lib/anime_web/admin_navigation.ex:21
+#: lib/anime_web/live/matrix_live.ex:160
+#: lib/anime_web/live/matrix_live.ex:196
+#, elixir-autogen, elixir-format
+msgid "Матрица прав"
+msgstr ""
+
+#: lib/anime_web/live/matrix_live.ex:75
+#, elixir-autogen, elixir-format
+msgid "Матрица сохранена"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:191
+#: lib/anime_web/components/public_components.ex:71
+#, elixir-autogen, elixir-format
+msgid "Меню профиля"
+msgstr ""
+
+#: lib/anime_web/live/placeholder_live.ex:24
+#, elixir-autogen, elixir-format
+msgid "Мой аккаунт"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:208
+#: lib/anime_web/components/public_components.ex:90
+#: lib/anime_web/page_titles.ex:21
+#, elixir-autogen, elixir-format
+msgid "Мой профиль"
+msgstr ""
+
+#: lib/anime_web/controllers/page_html.ex:11
+#: lib/anime_web/controllers/page_html.ex:22
+#: lib/anime_web/controllers/public_profile_html.ex:50
+#, elixir-autogen, elixir-format
+msgid "На главную"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:207
+#, elixir-autogen, elixir-format
+msgid "На сайт"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:291
+#, elixir-autogen, elixir-format
+msgid "Назад"
+msgstr ""
+
+#: lib/anime_web/live/permissions_live.ex:96
+#: lib/anime_web/live/roles_live.ex:257
+#: lib/anime_web/live/roles_live.ex:341
+#, elixir-autogen, elixir-format
+msgid "Название"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:61
+#: lib/anime_web/live/user_admin_live.ex:416
+#, elixir-autogen, elixir-format
+msgid "Найдено"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:273
+#, elixir-autogen, elixir-format
+msgid "Накрутка оценок"
+msgstr ""
+
+#: lib/anime_web/components/public_components.ex:92
+#: lib/anime_web/live/profile_live.ex:220
+#: lib/anime_web/page_titles.ex:20
+#, elixir-autogen, elixir-format
+msgid "Настройки"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:75
+#, elixir-autogen, elixir-format
+msgid "Настройки сохранены"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:362
+#: lib/anime_web/live/user_admin_live.ex:355
+#: lib/anime_web/live/users_live.ex:263
+#: lib/anime_web/live/users_live.ex:473
+#, elixir-autogen, elixir-format
+msgid "Не подтверждён"
+msgstr ""
+
+#: lib/anime_web/controllers/session_controller.ex:91
+#: lib/anime_web/live/auth_live.ex:70
+#, elixir-autogen, elixir-format
+msgid "Не удалось изменить пароль"
+msgstr ""
+
+#: lib/anime_web/controllers/session_controller.ex:144
+#: lib/anime_web/live/profile_live.ex:78
+#, elixir-autogen, elixir-format
+msgid "Не удалось сохранить"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:186
+#, elixir-autogen, elixir-format
+msgid "Не удалось сохранить. Проверьте поля и доступность значения."
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:365
+#: lib/anime_web/live/user_admin_live.ex:411
+#: lib/anime_web/live/users_live.ex:277
+#: lib/anime_web/live/users_live.ex:494
+#: lib/anime_web/live/users_live.ex:495
+#, elixir-autogen, elixir-format
+msgid "Не указан"
+msgstr ""
+
+#: lib/anime_web/controllers/session_controller.ex:18
+#, elixir-autogen, elixir-format
+msgid "Неверный логин или пароль"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:183
+#, elixir-autogen, elixir-format
+msgid "Неверный текущий пароль"
+msgstr ""
+
+#: lib/anime_web/controllers/error_html.ex:45
+#: lib/anime_web/controllers/page_controller.ex:23
+#: lib/anime_web/controllers/page_html.ex:21
+#: lib/anime_web/live/admin_guard.ex:98
+#, elixir-autogen, elixir-format
+msgid "Недостаточно прав"
+msgstr ""
+
+#: lib/anime/access/labels.ex:46
+#, elixir-autogen, elixir-format
+msgid "Неизвестная область"
+msgstr ""
+
+#: lib/anime/access/labels.ex:195
+#, elixir-autogen, elixir-format
+msgid "Неизвестное разрешение"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:182
+#, elixir-autogen, elixir-format
+msgid "Нельзя удалить последнего активного владельца"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:270
+#, elixir-autogen, elixir-format
+msgid "Нет"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:162
+#: lib/anime_web/live/profile_live.ex:243
+#: lib/anime_web/live/user_admin_live.ex:554
+#: lib/anime_web/live/users_live.ex:402
+#, elixir-autogen, elixir-format
+msgid "Ник"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:107
+#, elixir-autogen, elixir-format
+msgid "Ник изменён"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:181
+#, elixir-autogen, elixir-format
+msgid "Ник можно менять один раз в 30 суток"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:234
+#, elixir-autogen, elixir-format
+msgid "Ник, email или ID"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:609
+#: lib/anime_web/live/users_live.ex:584
+#, elixir-autogen, elixir-format
+msgid "Новая роль"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:286
+#, elixir-autogen, elixir-format
+msgid "Новый email"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:260
+#, elixir-autogen, elixir-format
+msgid "Новый ник"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:100
+#: lib/anime_web/page_titles.ex:14
+#, elixir-autogen, elixir-format
+msgid "Новый пароль"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:218
+#: lib/anime_web/live/user_admin_live.ex:297
+#, elixir-autogen, elixir-format
+msgid "Обзор"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:355
+#: lib/anime_web/live/matrix_live.ex:165
+#: lib/anime_web/live/permissions_live.ex:58
+#: lib/anime_web/live/permissions_live.ex:96
+#, elixir-autogen, elixir-format
+msgid "Область"
+msgstr ""
+
+#: lib/anime_web/components/layouts.ex:62
+#: lib/anime_web/controllers/page_html.ex:23
+#: lib/anime_web/page_titles.ex:31
+#, elixir-autogen, elixir-format
+msgid "Обратная связь"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:274
+#, elixir-autogen, elixir-format
+msgid "Обход блокировки"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:270
+#, elixir-autogen, elixir-format
+msgid "Ожидает подтверждения:"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:427
+#, elixir-autogen, elixir-format
+msgid "Оператор"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:272
+#, elixir-autogen, elixir-format
+msgid "Оскорбления"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:52
+#, elixir-autogen, elixir-format
+msgid "Остальные сессии завершены"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:197
+#, elixir-autogen, elixir-format
+msgid "От 12 символов: хотя бы одна буква и цифра."
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:537
+#: lib/anime_web/live/user_admin_live.ex:265
+#, elixir-autogen, elixir-format
+msgid "Отказ"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:343
+#, elixir-autogen, elixir-format
+msgid "Отказавшие записи текущей страницы остаются выделенными. Для повторной попытки после проверки снимите выделение и выберите их заново."
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:332
+#, elixir-autogen, elixir-format
+msgid "Отказов"
+msgstr ""
+
+#: lib/anime/workers/mail.ex:32
+#, elixir-autogen, elixir-format
+msgid "Откройте ссылку:"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:501
+#: lib/anime_web/live/users_live.ex:502
+#, elixir-autogen, elixir-format
+msgid "Открыть"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:162
+#, elixir-autogen, elixir-format
+msgid "Открыть меню"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:228
+#: lib/anime_web/live/user_admin_live.ex:294
+#, elixir-autogen, elixir-format
+msgid "Открыть публичный профиль"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:627
+#: lib/anime_web/live/users_live.ex:597
+#, elixir-autogen, elixir-format
+msgid "Отмена"
+msgstr ""
+
+#: lib/anime_web/live/matrix_live.ex:268
+#: lib/anime_web/live/profile_live.ex:274
+#: lib/anime_web/live/roles_live.ex:355
+#: lib/anime_web/live/roles_live.ex:381
+#, elixir-autogen, elixir-format
+msgid "Отменить"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:583
+#, elixir-autogen, elixir-format
+msgid "Отменить запрос удаления? Старые сессии не восстановятся; действующая блокировка останется."
+msgstr ""
+
+#: lib/anime_web/live/matrix_live.ex:246
+#, elixir-autogen, elixir-format
+msgid "Отменить изменения"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:349
+#, elixir-autogen, elixir-format
+msgid "Отменить удаление"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:232
+#, elixir-autogen, elixir-format
+msgid "Отправить письмо"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:271
+#, elixir-autogen, elixir-format
+msgid "Отправить повторно"
+msgstr ""
+
+#: lib/anime_web/controllers/public_profile_html.ex:33
+#, elixir-autogen, elixir-format
+msgid "Оценки и комментарии"
+msgstr ""
+
+#: lib/anime_web/controllers/public_profile_html.ex:35
+#, elixir-autogen, elixir-format
+msgid "Оценки, комментарии и жалобы появятся в очереди 4. Статистика пока не рассчитывается."
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:538
+#: lib/anime_web/live/user_admin_live.ex:266
+#, elixir-autogen, elixir-format
+msgid "Ошибка"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:184
+#, elixir-autogen, elixir-format
+msgid "Пароль"
+msgstr ""
+
+#: lib/anime/workers/mail.ex:75
+#, elixir-autogen, elixir-format
+msgid "Пароль вашего аккаунта изменён. Если это были не вы, восстановите доступ."
+msgstr ""
+
+#: lib/anime/workers/mail.ex:74
+#: lib/anime_web/controllers/session_controller.ex:86
+#: lib/anime_web/live/auth_live.ex:66
+#, elixir-autogen, elixir-format
+msgid "Пароль изменён"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:285
+#, elixir-autogen, elixir-format
+msgid "Первая"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:562
+#, elixir-autogen, elixir-format
+msgid "Первые 10 ID"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:505
+#, elixir-autogen, elixir-format
+msgid "По возрастанию"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:349
+#: lib/anime_web/components/admin_components.ex:432
+#, elixir-autogen, elixir-format
+msgid "По дату"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:505
+#, elixir-autogen, elixir-format
+msgid "По убыванию"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:278
+#: lib/anime_web/live/roles_live.ex:302
+#: lib/anime_web/live/roles_live.ex:303
+#, elixir-autogen, elixir-format
+msgid "По умолчанию"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:192
+#, elixir-autogen, elixir-format
+msgid "Повтор пароля"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:24
+#, elixir-autogen, elixir-format
+msgid "Повторить загрузку"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:85
+#, elixir-autogen, elixir-format
+msgid "Под текущие фильтры ничего не подошло"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:210
+#, elixir-autogen, elixir-format
+msgid "Подождите…"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:369
+#: lib/anime_web/live/user_admin_live.ex:543
+#, elixir-autogen, elixir-format
+msgid "Подтвердите действие"
+msgstr ""
+
+#: lib/anime_web/live/matrix_live.ex:257
+#, elixir-autogen, elixir-format
+msgid "Подтвердите изменения"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:126
+#, elixir-autogen, elixir-format
+msgid "Подтвердите новый адрес по ссылке в письме"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:375
+#: lib/anime_web/live/user_admin_live.ex:623
+#: lib/anime_web/live/users_live.ex:596
+#, elixir-autogen, elixir-format
+msgid "Подтвердить"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:296
+#, elixir-autogen, elixir-format
+msgid "Подтвердить новый email"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:345
+#: lib/anime_web/live/users_live.ex:258
+#, elixir-autogen, elixir-format
+msgid "Подтверждение email"
+msgstr ""
+
+#: lib/anime/workers/mail.ex:31
+#, elixir-autogen, elixir-format
+msgid "Подтверждение действия"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:361
+#: lib/anime_web/live/user_admin_live.ex:354
+#: lib/anime_web/live/users_live.ex:261
+#: lib/anime_web/live/users_live.ex:472
+#, elixir-autogen, elixir-format
+msgid "Подтверждён"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:342
+#: lib/anime_web/live/matrix_live.ex:164
+#: lib/anime_web/live/permissions_live.ex:56
+#: lib/anime_web/live/roles_live.ex:225
+#: lib/anime_web/live/users_live.ex:230
+#, elixir-autogen, elixir-format
+msgid "Поиск"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:353
+#, elixir-autogen, elixir-format
+msgid "Показывать значок роли"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:308
+#, elixir-autogen, elixir-format
+msgid "Показывать избранное в публичном профиле"
+msgstr ""
+
+#: lib/anime_web/admin_navigation.ex:11
+#: lib/anime_web/live/roles_live.ex:266
+#: lib/anime_web/live/user_admin_live.ex:24
+#: lib/anime_web/live/user_admin_live.ex:297
+#: lib/anime_web/live/users_live.ex:20
+#: lib/anime_web/live/users_live.ex:217
+#: lib/anime_web/live/users_live.ex:370
+#, elixir-autogen, elixir-format
+msgid "Пользователи"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:463
+#, elixir-autogen, elixir-format
+msgid "Пользователь"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:352
+#: lib/anime_web/components/admin_components.ex:399
+#, elixir-autogen, elixir-format
+msgid "Пользователь (ID)"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:240
+#, elixir-autogen, elixir-format
+msgid "Пользователь не найден"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:260
+#, elixir-autogen, elixir-format
+msgid "Порядок"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:341
+#, elixir-autogen, elixir-format
+msgid "Последнее использование:"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:304
+#, elixir-autogen, elixir-format
+msgid "Последняя"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:486
+#: lib/anime_web/live/users_live.ex:424
+#, elixir-autogen, elixir-format
+msgid "Последняя активность"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:313
+#, elixir-autogen, elixir-format
+msgid "Править"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:553
+#, elixir-autogen, elixir-format
+msgid "Правка пользователя"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:365
+#, elixir-autogen, elixir-format
+msgid "Предыдущий ник"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:244
+#, elixir-autogen, elixir-format
+msgid "Прежний ник резервируется за вами на 30 суток."
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:564
+#, elixir-autogen, elixir-format
+msgid "При смене email подтверждение сбрасывается, сессии и старые ссылки отзываются. Письмо не отправляется."
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:332
+#, elixir-autogen, elixir-format
+msgid "Применено"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:589
+#, elixir-autogen, elixir-format
+msgid "Причина"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:398
+#: lib/anime_web/live/user_admin_live.ex:429
+#: lib/anime_web/live/users_live.ex:425
+#, elixir-autogen, elixir-format
+msgid "Причина блокировки"
+msgstr ""
+
+#: lib/anime_web/live/matrix_live.ex:242
+#, elixir-autogen, elixir-format
+msgid "Проверить изменения"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:151
+#, elixir-autogen, elixir-format
+msgid "Проверьте поля формы"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:210
+#, elixir-autogen, elixir-format
+msgid "Продолжить"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:386
+#, elixir-autogen, elixir-format
+msgid "Продолжить просмотр на главной"
+msgstr ""
+
+#: lib/anime_web/controllers/public_profile_html.ex:49
+#, elixir-autogen, elixir-format
+msgid "Профиль не найден"
+msgstr ""
+
+#: lib/anime_web/controllers/public_profile_html.ex:22
+#, elixir-autogen, elixir-format
+msgid "Профиль скрыт. Вам он доступен по праву просмотра пользователей."
+msgstr ""
+
+#: lib/anime_web/controllers/public_profile_controller.ex:14
+#: lib/anime_web/controllers/public_profile_html.ex:10
+#, elixir-autogen, elixir-format
+msgid "Публичный профиль"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:331
+#: lib/anime_web/live/users_live.ex:513
+#: lib/anime_web/live/users_live.ex:518
+#, elixir-autogen, elixir-format
+msgid "Разблокировать"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:263
+#, elixir-autogen, elixir-format
+msgid "Разблокировка"
+msgstr ""
+
+#: lib/anime_web/live/content_placeholder_live.ex:11
+#: lib/anime_web/live/placeholder_live.ex:16
+#, elixir-autogen, elixir-format
+msgid "Раздел появится позже"
+msgstr ""
+
+#: lib/anime_web/admin_navigation.ex:20
+#: lib/anime_web/live/admin_live.ex:28
+#: lib/anime_web/live/matrix_live.ex:201
+#: lib/anime_web/live/permissions_live.ex:46
+#: lib/anime_web/live/permissions_live.ex:77
+#, elixir-autogen, elixir-format
+msgid "Разрешения"
+msgstr ""
+
+#: lib/anime_web/components/public_components.ex:51
+#: lib/anime_web/live/auth_live.ex:125
+#: lib/anime_web/page_titles.ex:12
+#, elixir-autogen, elixir-format
+msgid "Регистрация"
+msgstr ""
+
+#: lib/anime_web/controllers/session_controller.ex:38
+#, elixir-autogen, elixir-format
+msgid "Регистрация не выполнена. Проверьте поля и попробуйте снова."
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:354
+#: lib/anime_web/components/admin_components.ex:414
+#: lib/anime_web/components/admin_components.ex:465
+#: lib/anime_web/live/user_admin_live.ex:429
+#, elixir-autogen, elixir-format
+msgid "Результат"
+msgstr ""
+
+#: lib/anime_web/live/users_live.ex:330
+#, elixir-autogen, elixir-format
+msgid "Результат операции"
+msgstr ""
+
+#: lib/anime_web/admin_navigation.ex:19
+#: lib/anime_web/live/roles_live.ex:208
+#: lib/anime_web/live/roles_live.ex:238
+#, elixir-autogen, elixir-format
+msgid "Роли"
+msgstr ""
+
+#: lib/anime_web/admin_navigation.ex:17
+#, elixir-autogen, elixir-format
+msgid "Роли и права"
+msgstr ""
+
+#: lib/anime_web/live/matrix_live.ex:93
+#, elixir-autogen, elixir-format
+msgid "Роли изменились в другом окне. Проверьте изменения или перечитайте матрицу."
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:343
+#: lib/anime_web/components/admin_components.ex:463
+#: lib/anime_web/live/matrix_live.ex:173
+#: lib/anime_web/live/user_admin_live.ex:357
+#: lib/anime_web/live/users_live.ex:236
+#: lib/anime_web/live/users_live.ex:411
+#, elixir-autogen, elixir-format
+msgid "Роль"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:373
+#, elixir-autogen, elixir-format
+msgid "Роль новых регистраций"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:98
+#, elixir-autogen, elixir-format
+msgid "С возвращением"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:348
+#: lib/anime_web/components/admin_components.ex:427
+#, elixir-autogen, elixir-format
+msgid "С даты"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:364
+#: lib/anime_web/live/users_live.ex:270
+#, elixir-autogen, elixir-format
+msgid "С указанным сроком"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:335
+#, elixir-autogen, elixir-format
+msgid "Сбросить"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:92
+#, elixir-autogen, elixir-format
+msgid "Сбросить фильтры"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:181
+#: lib/anime_web/components/public_components.ex:116
+#, elixir-autogen, elixir-format
+msgid "Светлая"
+msgstr ""
+
+#: lib/anime_web/live/placeholder_live.ex:18
+#, elixir-autogen, elixir-format
+msgid "Сейчас доступен первый срез: регистрация, вход и аккаунт. Контент добавляется следующими очередями."
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:414
+#, elixir-autogen, elixir-format
+msgid "Сейчас не заблокирован"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:299
+#: lib/anime_web/live/user_admin_live.ex:471
+#: lib/anime_web/live/user_admin_live.ex:480
+#, elixir-autogen, elixir-format
+msgid "Сессии"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:330
+#: lib/anime_web/live/user_admin_live.ex:280
+#, elixir-autogen, elixir-format
+msgid "Сессия"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:275
+#, elixir-autogen, elixir-format
+msgid "Системная"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:246
+#, elixir-autogen, elixir-format
+msgid "Следующая смена доступна:"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:185
+#, elixir-autogen, elixir-format
+msgid "Слишком много запросов. Попробуйте позже."
+msgstr ""
+
+#: lib/anime_web/controllers/session_controller.ex:13
+#, elixir-autogen, elixir-format
+msgid "Слишком много попыток. Попробуйте через 15 минут."
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:370
+#, elixir-autogen, elixir-format
+msgid "Смена ника"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:319
+#: lib/anime_web/live/users_live.ex:202
+#: lib/anime_web/live/users_live.ex:530
+#: lib/anime_web/live/users_live.ex:531
+#, elixir-autogen, elixir-format
+msgid "Сменить роль"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:616
+#, elixir-autogen, elixir-format
+msgid "Снять блокировку пользователя?"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:331
+#, elixir-autogen, elixir-format
+msgid "Снять фильтр"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:377
+#, elixir-autogen, elixir-format
+msgid "Согласие"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:485
+#, elixir-autogen, elixir-format
+msgid "Создана"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:335
+#, elixir-autogen, elixir-format
+msgid "Создана:"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:97
+#, elixir-autogen, elixir-format
+msgid "Создать аккаунт"
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:214
+#: lib/anime_web/live/roles_live.ex:327
+#: lib/anime_web/live/roles_live.ex:334
+#, elixir-autogen, elixir-format
+msgid "Создать роль"
+msgstr ""
+
+#: lib/anime_web/live/matrix_live.ex:264
+#: lib/anime_web/live/profile_live.ex:309
+#: lib/anime_web/live/roles_live.ex:354
+#, elixir-autogen, elixir-format
+msgid "Сохранить"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:384
+#, elixir-autogen, elixir-format
+msgid "Сохранять историю просмотра"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:271
+#, elixir-autogen, elixir-format
+msgid "Спам"
+msgstr ""
+
+#: lib/anime_web/components/public_components.ex:189
+#, elixir-autogen, elixir-format
+msgid "Спешл"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:23
+#, elixir-autogen, elixir-format
+msgid "Список не загружен. Измените фильтры или повторите запрос."
+msgstr ""
+
+#: lib/anime_web/live/permissions_live.ex:47
+#, elixir-autogen, elixir-format
+msgid "Справочник только для чтения"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:346
+#: lib/anime_web/live/users_live.ex:265
+#, elixir-autogen, elixir-format
+msgid "Срок блокировки"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:595
+#, elixir-autogen, elixir-format
+msgid "Срок в сутках"
+msgstr ""
+
+#: lib/anime_web/controllers/session_controller.ex:70
+#, elixir-autogen, elixir-format
+msgid "Ссылка недействительна или истекла"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:344
+#: lib/anime_web/live/user_admin_live.ex:358
+#: lib/anime_web/live/users_live.ex:246
+#: lib/anime_web/live/users_live.ex:439
+#: lib/anime_web/live/users_live.ex:444
+#, elixir-autogen, elixir-format
+msgid "Статус"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:351
+#: lib/anime_web/live/users_live.ex:322
+#, elixir-autogen, elixir-format
+msgid "Сторонник"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:374
+#, elixir-autogen, elixir-format
+msgid "Сторонник до"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:284
+#, elixir-autogen, elixir-format
+msgid "Страницы"
+msgstr ""
+
+#: lib/anime_web/components/public_components.ex:185
+#, elixir-autogen, elixir-format
+msgid "ТВ"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:326
+#, elixir-autogen, elixir-format
+msgid "Текущая"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:268
+#, elixir-autogen, elixir-format
+msgid "Текущий адрес не изменится до подтверждения нового."
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:176
+#: lib/anime_web/live/profile_live.ex:293
+#: lib/anime_web/live/profile_live.ex:377
+#, elixir-autogen, elixir-format
+msgid "Текущий пароль"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:173
+#: lib/anime_web/components/admin_components.ex:176
+#: lib/anime_web/components/public_components.ex:71
+#: lib/anime_web/components/public_components.ex:106
+#, elixir-autogen, elixir-format
+msgid "Тема"
+msgstr ""
+
+#: lib/anime_web/components/public_components.ex:137
+#, elixir-autogen, elixir-format
+msgid "Тип аниме"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:388
+#, elixir-autogen, elixir-format
+msgid "Требуется смена пароля"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:182
+#: lib/anime_web/components/public_components.ex:121
+#, elixir-autogen, elixir-format
+msgid "Тёмная"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:607
+#, elixir-autogen, elixir-format
+msgid "Уведомить письмом"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:355
+#: lib/anime_web/live/user_admin_live.ex:570
+#, elixir-autogen, elixir-format
+msgid "Удаление аккаунта"
+msgstr ""
+
+#: lib/anime_web/controllers/session_controller.ex:100
+#, elixir-autogen, elixir-format
+msgid "Удаление аккаунта отменено. Войдите заново."
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:12
+#: lib/anime_web/components/admin_components.ex:350
+#: lib/anime_web/live/user_admin_live.ex:390
+#: lib/anime_web/live/users_live.ex:316
+#, elixir-autogen, elixir-format
+msgid "Удаление запрошено"
+msgstr ""
+
+#: lib/anime_web/live/profile_live.ex:159
+#, elixir-autogen, elixir-format
+msgid "Удаление запрошено. Ссылка отмены отправлена на email."
+msgstr ""
+
+#: lib/anime_web/live/roles_live.ex:313
+#: lib/anime_web/live/roles_live.ex:314
+#: lib/anime_web/live/roles_live.ex:372
+#, elixir-autogen, elixir-format
+msgid "Удалить"
+msgstr ""
+
+#: lib/anime_web/live/user_admin_live.ex:343
+#, elixir-autogen, elixir-format
+msgid "Удалить аккаунт"
+msgstr ""
+
+#: lib/anime_web/components/layouts.ex:63
+#: lib/anime_web/page_titles.ex:32
+#, elixir-autogen, elixir-format
+msgid "Условия использования"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:536
+#: lib/anime_web/live/user_admin_live.ex:264
+#, elixir-autogen, elixir-format
+msgid "Успех"
+msgstr ""
+
+#: lib/anime_web/components/public_components.ex:186
+#, elixir-autogen, elixir-format
+msgid "Фильм"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:397
+#: lib/anime_web/live/matrix_live.ex:162
+#: lib/anime_web/live/permissions_live.ex:54
+#: lib/anime_web/live/roles_live.ex:223
+#: lib/anime_web/live/users_live.ex:228
+#, elixir-autogen, elixir-format
+msgid "Фильтры"
+msgstr ""
+
+#: lib/anime_web/live/auth_live.ex:204
+#, elixir-autogen, elixir-format
+msgid "Я принимаю условия использования и политику конфиденциальности"
+msgstr ""
+
+#: lib/anime_web/components/admin_components.ex:166
+#: lib/anime_web/components/public_components.ex:160
+#: lib/anime_web/live/user_admin_live.ex:373
+#: lib/anime_web/live/user_admin_live.ex:556
+#, elixir-autogen, elixir-format
+msgid "Язык"
+msgstr ""
+
+#: lib/anime_web/page_titles.ex:11
+#, elixir-autogen, elixir-format
+msgid "Вход"
+msgstr ""
+
+#: lib/anime_web/page_titles.ex:15
+#, elixir-autogen, elixir-format
+msgid "Смена пароля"
+msgstr ""
+
+#: lib/anime_web/page_titles.ex:26
+#, elixir-autogen, elixir-format
+msgid "Главная"
+msgstr ""
+
+#: lib/anime_web/page_titles.ex:30
+#, elixir-autogen, elixir-format
+msgid "Донаты"
+msgstr ""
+
+#: lib/anime_web/controllers/error_html.ex:36
+#: lib/anime_web/controllers/page_controller.ex:14
+#: lib/anime_web/controllers/page_html.ex:8
+#, elixir-autogen, elixir-format
+msgid "Страница не найдена"
+msgstr ""
+
+#: lib/anime_web/controllers/page_html.ex:9
+#, elixir-autogen, elixir-format
+msgid "Возможно, ссылка устарела или в адресе есть опечатка."
+msgstr ""
+
+#: lib/anime_web/controllers/error_html.ex:56
+#, elixir-autogen, elixir-format
+msgid "Некорректный запрос"
+msgstr ""
+
+#: lib/anime_web/controllers/error_html.ex:57
+#, elixir-autogen, elixir-format
+msgid "Запрос слишком большой"
+msgstr ""
+
+#: lib/anime_web/controllers/error_html.ex:58
+#, elixir-autogen, elixir-format
+msgid "Не удалось выполнить запрос"
+msgstr ""
+
+#: lib/anime_web/controllers/error_html.ex:74
+#, elixir-autogen, elixir-format
+msgid "Номер запроса"
+msgstr ""
+
+#: lib/anime_web/components/layouts.ex:75
+#, elixir-autogen, elixir-format
+msgid "Связь с сервером потеряна. Переподключаемся…"
+msgstr ""
+
+#: lib/anime_web/live/admin_guard.ex:85
+#, elixir-autogen, elixir-format
+msgid "Права изменены, доступ закрыт"
+msgstr ""

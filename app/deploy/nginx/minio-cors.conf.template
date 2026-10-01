@@ -1,0 +1,69 @@
+# http-context include. Render with render-minio-cors.mjs; never envsubst all nginx variables.
+map $http_origin $site_origin {
+    default "";
+    "@@ORIGIN@@" "@@ORIGIN@@";
+}
+map $request_uri $bucket_method {
+    default "";
+    ~^/@@ORIGINALS@@/ PUT;
+    ~^/@@VIDEO@@/ GET;
+    ~^/@@PREVIEWS@@/ GET;
+}
+map "$request_method:$http_access_control_request_method" $cors_method {
+    default $request_method;
+    "OPTIONS:PUT" PUT;
+    "OPTIONS:GET" GET;
+}
+map "$bucket_method:$cors_method" $method_allowed {
+    default 0;
+    "PUT:PUT" 1;
+    "GET:GET" 1;
+}
+map $http_access_control_request_headers $headers_allowed {
+    default 0;
+    "" 1;
+    ~*^\s*(content-type|range)(\s*,\s*(content-type|range))*\s*$ 1;
+}
+map "$site_origin:$method_allowed:$headers_allowed" $cors_allow_origin {
+    default "";
+    "@@ORIGIN@@:1:1" "@@ORIGIN@@";
+}
+map "$http_origin:$cors_allow_origin" $deny_origin {
+    default 0;
+    ~^.+:$ 1;
+}
+map "$request_method:$cors_allow_origin" $deny_preflight {
+    default 0;
+    "OPTIONS:" 1;
+}
+server {
+    listen 8080;
+    server_name @@HOST@@;
+    # Public TLS must terminate before this private listener; no public MinIO port.
+    access_log off;
+    error_log /dev/null crit;
+    client_max_body_size 20g;
+    location / {
+        if ($deny_origin) { return 403; }
+        if ($deny_preflight) { return 403; }
+        if ($request_method = OPTIONS) { return 204; }
+        add_header Access-Control-Allow-Origin $cors_allow_origin always;
+        add_header Access-Control-Allow-Methods $bucket_method always;
+        add_header Access-Control-Allow-Headers "Content-Type, Range" always;
+        add_header Access-Control-Expose-Headers "ETag, Content-Range, Accept-Ranges" always;
+        add_header Vary "Origin, Access-Control-Request-Method, Access-Control-Request-Headers" always;
+        proxy_hide_header Access-Control-Allow-Origin;
+        proxy_hide_header Access-Control-Allow-Methods;
+        proxy_hide_header Access-Control-Allow-Headers;
+        proxy_hide_header Access-Control-Allow-Credentials;
+        proxy_hide_header Access-Control-Expose-Headers;
+        proxy_hide_header Access-Control-Max-Age;
+        proxy_set_header Host $http_host;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_cache off;
+        proxy_buffering off;
+        proxy_request_buffering off;
+        proxy_pass http://@@UPSTREAM@@;
+    }
+}

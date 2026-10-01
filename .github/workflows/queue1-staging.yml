@@ -1,0 +1,74 @@
+name: Queue 1 staging bootstrap
+
+on:
+  push:
+    branches: [queue1-staging]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: queue1-staging-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-and-package:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: app
+    env:
+      APP_ENV: dev
+      PHX_SERVER: 'false'
+      ELIXIR_ERL_OPTIONS: '+S 4:4'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: erlef/setup-beam@0f75c29430f34bb5af4cce5e3b7f6a8860fca236
+        with:
+          otp-version: '28.5'
+          elixir-version: '1.19.5'
+          version-type: strict
+      - name: Install PostgreSQL 18.6 from the official signed repository
+        run: |
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl --fail --silent --show-error --location https://www.postgresql.org/media/keys/ACCC4CF8.asc -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc
+          sudo install -m 0644 deploy/pgdg-noble.sources /etc/apt/sources.list.d/anime-pgdg.sources
+          sudo apt-get update -qq
+          sudo apt-get install -y 'postgresql-18=18.6*' 'postgresql-client-18=18.6*'
+          /usr/lib/postgresql/18/bin/pg_ctl --version
+      - name: Fetch locked dependencies
+        run: |
+          mix local.hex --force
+          mix local.rebar --force
+          mix deps.get --check-locked
+          git diff --exit-code -- mix.lock
+      - name: Bootstrap verification (not the default-branch regression gate)
+        run: bash dev/check_queue1_local.sh
+      - name: Build compatible release
+        run: bash dev/check_release_local.sh
+      - name: Package the release without test databases or credentials
+        run: |
+          package=$(find /tmp -maxdepth 2 -type d -path '/tmp/anime-release-check.*/package')
+          test -n "$package"
+          test "$(printf '%s\n' "$package" | wc -l)" -eq 1
+          tar -C "$package" -czf /tmp/anime-staging-release.tar.gz .
+          sha256sum /tmp/anime-staging-release.tar.gz > /tmp/anime-staging-release.sha256
+          git diff --exit-code
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: queue1-staging-${{ github.sha }}
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            /tmp/anime-staging-release.tar.gz
+            /tmp/anime-staging-release.sha256
+            app/cover/coverage.json
+
+# The initial main branch contains only LICENSE. There is no trusted coverage
+# baseline yet. This bootstrap intentionally does not claim the 1pp regression
+# comparison implemented by dev/check_queue1_ci.sh; enable it after an approved
+# default-branch baseline. This workflow never deploys or receives server keys.

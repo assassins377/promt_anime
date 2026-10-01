@@ -1,0 +1,589 @@
+msgid ""
+msgstr ""
+"Language: en\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+#: lib/anime/access/labels.ex:49
+#, elixir-autogen, elixir-format
+msgid "admin.dashboard.view"
+msgstr "Dashboard: user, anime and video counts, online users and uptime"
+
+#: lib/anime/access/labels.ex:48
+#, elixir-autogen, elixir-format
+msgid "admin.panel.access"
+msgstr "Open any /admin/* route"
+
+#: lib/anime/access/labels.ex:50
+#, elixir-autogen, elixir-format
+msgid "admin.stats.view"
+msgstr "Visits by day and country; popular searches and searches with no results"
+
+#: lib/anime/access/labels.ex:140
+#, elixir-autogen, elixir-format
+msgid "announcements.banner.manage"
+msgstr "Manage the top banner"
+
+#: lib/anime/access/labels.ex:143
+#, elixir-autogen, elixir-format
+msgid "announcements.global.manage"
+msgstr "Manage global announcements"
+
+#: lib/anime/access/labels.ex:152
+#, elixir-autogen, elixir-format
+msgid "announcements.modal.manage"
+msgstr "Manage modal announcements"
+
+#: lib/anime/access/labels.ex:149
+#, elixir-autogen, elixir-format
+msgid "announcements.notification.view"
+msgstr "View sent notifications and read counts"
+
+#: lib/anime/access/labels.ex:146
+#, elixir-autogen, elixir-format
+msgid "announcements.personal.send"
+msgstr "Send a personal announcement with RU/EN title and body to one user through the notification bell"
+
+#: lib/anime/access/labels.ex:174
+#, elixir-autogen, elixir-format
+msgid "audit.log.export"
+msgstr "Export audit log results"
+
+#: lib/anime/access/labels.ex:173
+#, elixir-autogen, elixir-format
+msgid "audit.log.view"
+msgstr "View the audit log"
+
+#: lib/anime/access/labels.ex:169
+#, elixir-autogen, elixir-format
+msgid "billing.donation.edit"
+msgstr "Edit donation visibility and display name, without changing comment status"
+
+#: lib/anime/access/labels.ex:168
+#, elixir-autogen, elixir-format
+msgid "billing.donation.view"
+msgstr "View donations"
+
+#: lib/anime/access/labels.ex:170
+#, elixir-autogen, elixir-format
+msgid "billing.donor.link"
+msgstr "Link a guest donation to a user account"
+
+#: lib/anime/access/labels.ex:171
+#, elixir-autogen, elixir-format
+msgid "billing.refund.create"
+msgstr "Initiate full or partial refunds"
+
+#: lib/anime/access/labels.ex:172
+#, elixir-autogen, elixir-format
+msgid "billing.stats.view"
+msgstr "View donation statistics"
+
+#: lib/anime/access/labels.ex:166
+#, elixir-autogen, elixir-format
+msgid "billing.transaction.resolve"
+msgstr "Review transactions requiring investigation and conflicts"
+
+#: lib/anime/access/labels.ex:163
+#, elixir-autogen, elixir-format
+msgid "billing.transaction.view"
+msgstr "View transactions and their webhook events"
+
+#: lib/anime/access/labels.ex:137
+#, elixir-autogen, elixir-format
+msgid "blog.draft.view"
+msgstr "View draft, scheduled or hidden posts by direct URL"
+
+#: lib/anime/access/labels.ex:131
+#, elixir-autogen, elixir-format
+msgid "blog.post.create"
+msgstr "Create a blog post"
+
+#: lib/anime/access/labels.ex:135
+#, elixir-autogen, elixir-format
+msgid "blog.post.delete"
+msgstr "Delete a blog post"
+
+#: lib/anime/access/labels.ex:132
+#, elixir-autogen, elixir-format
+msgid "blog.post.edit"
+msgstr "Edit a post, cover, tags and linked anime"
+
+#: lib/anime/access/labels.ex:134
+#, elixir-autogen, elixir-format
+msgid "blog.post.pin"
+msgstr "Pin or unpin a blog post"
+
+#: lib/anime/access/labels.ex:133
+#, elixir-autogen, elixir-format
+msgid "blog.post.publish"
+msgstr "Change post status: draft, scheduled, published or hidden; set publication time"
+
+#: lib/anime/access/labels.ex:130
+#, elixir-autogen, elixir-format
+msgid "blog.post.view"
+msgstr "View blog posts"
+
+#: lib/anime/access/labels.ex:136
+#, elixir-autogen, elixir-format
+msgid "blog.tag.manage"
+msgstr "Create, edit, delete and reorder blog tags"
+
+#: lib/anime/access/labels.ex:95
+#, elixir-autogen, elixir-format
+msgid "content.anime.create"
+msgstr "Create an anime"
+
+#: lib/anime/access/labels.ex:97
+#, elixir-autogen, elixir-format
+msgid "content.anime.delete"
+msgstr "Delete an anime"
+
+#: lib/anime/access/labels.ex:96
+#, elixir-autogen, elixir-format
+msgid "content.anime.edit"
+msgstr "Edit anime fields, poster, stage, genres and categories"
+
+#: lib/anime/access/labels.ex:98
+#, elixir-autogen, elixir-format
+msgid "content.anime.publish"
+msgstr "Change anime publication status: draft, published or hidden"
+
+#: lib/anime/access/labels.ex:94
+#, elixir-autogen, elixir-format
+msgid "content.anime.view"
+msgstr "View anime content"
+
+#: lib/anime/access/labels.ex:105
+#, elixir-autogen, elixir-format
+msgid "content.category.manage"
+msgstr "Manage categories and their order on the home page"
+
+#: lib/anime/access/labels.ex:99
+#, elixir-autogen, elixir-format
+msgid "content.draft.view"
+msgstr "View draft or hidden anime and its episodes on their direct pages; never in catalog or search results"
+
+#: lib/anime/access/labels.ex:101
+#, elixir-autogen, elixir-format
+msgid "content.episode.manage"
+msgstr "Create, edit and delete episodes and their previews"
+
+#: lib/anime/access/labels.ex:102
+#, elixir-autogen, elixir-format
+msgid "content.genre.manage"
+msgstr "Manage genres, their order and visibility in catalog filters"
+
+#: lib/anime/access/labels.ex:113
+#, elixir-autogen, elixir-format
+msgid "content.homepage.pin"
+msgstr "Pin an anime first in a home-page category"
+
+#: lib/anime/access/labels.ex:111
+#, elixir-autogen, elixir-format
+msgid "content.relation.manage"
+msgstr "Manage anime relations; view type and age-rating reference values"
+
+#: lib/anime/access/labels.ex:100
+#, elixir-autogen, elixir-format
+msgid "content.season.manage"
+msgstr "Create, edit and delete seasons"
+
+#: lib/anime/access/labels.ex:107
+#, elixir-autogen, elixir-format
+msgid "content.stage.manage"
+msgstr "Manage anime stages"
+
+#: lib/anime/access/labels.ex:108
+#, elixir-autogen, elixir-format
+msgid "content.studio.manage"
+msgstr "View studio names and rename a studio across all matching anime"
+
+#: lib/anime/access/labels.ex:160
+#, elixir-autogen, elixir-format
+msgid "feedback.template.manage"
+msgstr "Manage reply templates"
+
+#: lib/anime/access/labels.ex:156
+#, elixir-autogen, elixir-format
+msgid "feedback.ticket.assign"
+msgstr "Assign a feedback ticket and mark it in progress"
+
+#: lib/anime/access/labels.ex:157
+#, elixir-autogen, elixir-format
+msgid "feedback.ticket.close"
+msgstr "Close a feedback ticket"
+
+#: lib/anime/access/labels.ex:155
+#, elixir-autogen, elixir-format
+msgid "feedback.ticket.reply"
+msgstr "Reply to a feedback ticket"
+
+#: lib/anime/access/labels.ex:154
+#, elixir-autogen, elixir-format
+msgid "feedback.ticket.view"
+msgstr "View feedback tickets: inbox, open, in progress and closed"
+
+#: lib/anime/access/labels.ex:21
+#, elixir-autogen, elixir-format
+msgid "group.admin"
+msgstr "Administration"
+
+#: lib/anime/access/labels.ex:35
+#, elixir-autogen, elixir-format
+msgid "group.announcements"
+msgstr "Announcements"
+
+#: lib/anime/access/labels.ex:41
+#, elixir-autogen, elixir-format
+msgid "group.audit"
+msgstr "Audit log"
+
+#: lib/anime/access/labels.ex:39
+#, elixir-autogen, elixir-format
+msgid "group.billing"
+msgstr "Donations / Billing"
+
+#: lib/anime/access/labels.ex:33
+#, elixir-autogen, elixir-format
+msgid "group.blog"
+msgstr "Blog"
+
+#: lib/anime/access/labels.ex:29
+#, elixir-autogen, elixir-format
+msgid "group.content"
+msgstr "Content"
+
+#: lib/anime/access/labels.ex:37
+#, elixir-autogen, elixir-format
+msgid "group.feedback"
+msgstr "Feedback"
+
+#: lib/anime/access/labels.ex:27
+#, elixir-autogen, elixir-format
+msgid "group.moderation"
+msgstr "Moderation"
+
+#: lib/anime/access/labels.ex:25
+#, elixir-autogen, elixir-format
+msgid "group.roles"
+msgstr "Roles and permissions"
+
+#: lib/anime/access/labels.ex:43
+#, elixir-autogen, elixir-format
+msgid "group.settings"
+msgstr "Settings"
+
+#: lib/anime/access/labels.ex:45
+#, elixir-autogen, elixir-format
+msgid "group.system"
+msgstr "System"
+
+#: lib/anime/access/labels.ex:23
+#, elixir-autogen, elixir-format
+msgid "group.users"
+msgstr "Users"
+
+#: lib/anime/access/labels.ex:31
+#, elixir-autogen, elixir-format
+msgid "group.video"
+msgstr "Video"
+
+#: lib/anime/access/labels.ex:80
+#, elixir-autogen, elixir-format
+msgid "moderation.comment.delete"
+msgstr "Mark a comment as deleted"
+
+#: lib/anime/access/labels.ex:74
+#, elixir-autogen, elixir-format
+msgid "moderation.comment.edit"
+msgstr "Edit any comment without a time limit"
+
+#: lib/anime/access/labels.ex:77
+#, elixir-autogen, elixir-format
+msgid "moderation.comment.hide"
+msgstr "Hide or publish a comment"
+
+#: lib/anime/access/labels.ex:71
+#, elixir-autogen, elixir-format
+msgid "moderation.comment.view"
+msgstr "View comments, including hidden comments"
+
+#: lib/anime/access/labels.ex:89
+#, elixir-autogen, elixir-format
+msgid "moderation.content.review"
+msgstr "Review a queued item"
+
+#: lib/anime/access/labels.ex:86
+#, elixir-autogen, elixir-format
+msgid "moderation.content.view"
+msgstr "View user content, pending reviews and blocked content"
+
+#: lib/anime/access/labels.ex:92
+#, elixir-autogen, elixir-format
+msgid "moderation.donation_comment.moderate"
+msgstr "Moderate donation comments: pending, published or hidden"
+
+#: lib/anime/access/labels.ex:68
+#, elixir-autogen, elixir-format
+msgid "moderation.report.resolve"
+msgstr "Accept or reject a report"
+
+#: lib/anime/access/labels.ex:65
+#, elixir-autogen, elixir-format
+msgid "moderation.report.view"
+msgstr "View comment reports and reports about users"
+
+#: lib/anime/access/labels.ex:83
+#, elixir-autogen, elixir-format
+msgid "moderation.stopword.edit"
+msgstr "Edit the stop-word list"
+
+#: lib/anime/access/labels.ex:16
+#, elixir-autogen, elixir-format
+msgid "role.admin"
+msgstr "Administrator"
+
+#: lib/anime/access/labels.ex:14
+#, elixir-autogen, elixir-format
+msgid "role.comment_moderator"
+msgstr "Comment moderator"
+
+#: lib/anime/access/labels.ex:15
+#, elixir-autogen, elixir-format
+msgid "role.content_editor"
+msgstr "Content editor"
+
+#: lib/anime/access/labels.ex:17
+#, elixir-autogen, elixir-format
+msgid "role.owner"
+msgstr "Owner"
+
+#: lib/anime/access/labels.ex:13
+#, elixir-autogen, elixir-format
+msgid "role.user"
+msgstr "User"
+
+#: lib/anime/access/labels.ex:64
+#, elixir-autogen, elixir-format
+msgid "roles.matrix.edit"
+msgstr "View and edit the role-permission matrix"
+
+#: lib/anime/access/labels.ex:63
+#, elixir-autogen, elixir-format
+msgid "roles.permission.view"
+msgstr "View the permission directory"
+
+#: lib/anime/access/labels.ex:60
+#, elixir-autogen, elixir-format
+msgid "roles.role.create"
+msgstr "Create a custom role"
+
+#: lib/anime/access/labels.ex:62
+#, elixir-autogen, elixir-format
+msgid "roles.role.delete"
+msgstr "Delete a custom role"
+
+#: lib/anime/access/labels.ex:61
+#, elixir-autogen, elixir-format
+msgid "roles.role.edit"
+msgstr "Rename a role and choose the default registration role"
+
+#: lib/anime/access/labels.ex:59
+#, elixir-autogen, elixir-format
+msgid "roles.role.view"
+msgstr "View roles"
+
+#: lib/anime/access/labels.ex:177
+#, elixir-autogen, elixir-format
+msgid "settings.email.edit"
+msgstr "Edit email settings"
+
+#: lib/anime/access/labels.ex:175
+#, elixir-autogen, elixir-format
+msgid "settings.general.edit"
+msgstr "Edit general settings"
+
+#: lib/anime/access/labels.ex:183
+#, elixir-autogen, elixir-format
+msgid "settings.notifications.edit"
+msgstr "Edit notification settings"
+
+#: lib/anime/access/labels.ex:180
+#, elixir-autogen, elixir-format
+msgid "settings.registration.edit"
+msgstr "Edit registration settings and enable or disable registration"
+
+#: lib/anime/access/labels.ex:185
+#, elixir-autogen, elixir-format
+msgid "settings.security.edit"
+msgstr "Edit security settings"
+
+#: lib/anime/access/labels.ex:176
+#, elixir-autogen, elixir-format
+msgid "settings.seo.edit"
+msgstr "Edit SEO settings"
+
+#: lib/anime/access/labels.ex:190
+#, elixir-autogen, elixir-format
+msgid "system.cache.clear"
+msgstr "Clear application ETS caches"
+
+#: lib/anime/access/labels.ex:189
+#, elixir-autogen, elixir-format
+msgid "system.cron.manage"
+msgstr "Enable, disable and run scheduled jobs manually"
+
+#: lib/anime/access/labels.ex:188
+#, elixir-autogen, elixir-format
+msgid "system.cron.view"
+msgstr "View scheduled jobs"
+
+#: lib/anime/access/labels.ex:193
+#, elixir-autogen, elixir-format
+msgid "system.database.view"
+msgstr "View PostgreSQL size, connections and migrations"
+
+#: lib/anime/access/labels.ex:194
+#, elixir-autogen, elixir-format
+msgid "system.log.view"
+msgstr "View system logs"
+
+#: lib/anime/access/labels.ex:187
+#, elixir-autogen, elixir-format
+msgid "system.queue.manage"
+msgstr "Pause and resume queues; retry or cancel Oban jobs"
+
+#: lib/anime/access/labels.ex:186
+#, elixir-autogen, elixir-format
+msgid "system.queue.view"
+msgstr "View Oban queues, jobs and errors"
+
+#: lib/anime/access/labels.ex:192
+#, elixir-autogen, elixir-format
+msgid "system.storage.manage"
+msgstr "Delete MinIO objects and start storage reconciliation"
+
+#: lib/anime/access/labels.ex:191
+#, elixir-autogen, elixir-format
+msgid "system.storage.view"
+msgstr "View MinIO buckets, storage usage and upload errors"
+
+#: lib/anime/access/labels.ex:58
+#, elixir-autogen, elixir-format
+msgid "users.activity.view"
+msgstr "View user activity history"
+
+#: lib/anime/access/labels.ex:56
+#, elixir-autogen, elixir-format
+msgid "users.role.assign"
+msgstr "Change a user's role"
+
+#: lib/anime/access/labels.ex:57
+#, elixir-autogen, elixir-format
+msgid "users.session.revoke"
+msgstr "Revoke another user's sessions and remember-me cookies"
+
+#: lib/anime/access/labels.ex:53
+#, elixir-autogen, elixir-format
+msgid "users.user.ban"
+msgstr "Block a user"
+
+#: lib/anime/access/labels.ex:55
+#, elixir-autogen, elixir-format
+msgid "users.user.delete"
+msgstr "Request deletion of another user's account"
+
+#: lib/anime/access/labels.ex:52
+#, elixir-autogen, elixir-format
+msgid "users.user.edit"
+msgstr "Edit another user's nickname, email, avatar and locale"
+
+#: lib/anime/access/labels.ex:54
+#, elixir-autogen, elixir-format
+msgid "users.user.unban"
+msgstr "Unblock a user before the block expires"
+
+#: lib/anime/access/labels.ex:51
+#, elixir-autogen, elixir-format
+msgid "users.user.view"
+msgstr "User list, search, filters and profiles, including blocked users and pending deletions"
+
+#: lib/anime/access/labels.ex:124
+#, elixir-autogen, elixir-format
+msgid "video.domain.manage"
+msgstr "Manage allowed external embed domains"
+
+#: lib/anime/access/labels.ex:127
+#, elixir-autogen, elixir-format
+msgid "video.error.resolve"
+msgstr "Resolve a video error and remove the review-required flag"
+
+#: lib/anime/access/labels.ex:126
+#, elixir-autogen, elixir-format
+msgid "video.error.view"
+msgstr "View video errors and unavailable videos"
+
+#: lib/anime/access/labels.ex:125
+#, elixir-autogen, elixir-format
+msgid "video.player.manage"
+msgstr "Manage external embed providers: code, name, URL template and enabled state"
+
+#: lib/anime/access/labels.ex:129
+#, elixir-autogen, elixir-format
+msgid "video.settings.toggle"
+msgstr "Toggle site-wide video, guest video and video for an individual anime"
+
+#: lib/anime/access/labels.ex:119
+#, elixir-autogen, elixir-format
+msgid "video.source.create"
+msgstr "Create a video source"
+
+#: lib/anime/access/labels.ex:121
+#, elixir-autogen, elixir-format
+msgid "video.source.delete"
+msgstr "Delete a video source"
+
+#: lib/anime/access/labels.ex:120
+#, elixir-autogen, elixir-format
+msgid "video.source.edit"
+msgstr "Edit a video source and its availability"
+
+#: lib/anime/access/labels.ex:118
+#, elixir-autogen, elixir-format
+msgid "video.source.view"
+msgstr "View video sources"
+
+#: lib/anime/access/labels.ex:123
+#, elixir-autogen, elixir-format
+msgid "video.subtitle.manage"
+msgstr "Upload VTT subtitle files, edit and delete subtitle tracks"
+
+#: lib/anime/access/labels.ex:115
+#, elixir-autogen, elixir-format
+msgid "video.upload.create"
+msgstr "Upload an original video file to MinIO"
+
+#: lib/anime/access/labels.ex:116
+#, elixir-autogen, elixir-format
+msgid "video.upload.delete"
+msgstr "Delete a video upload and its renditions"
+
+#: lib/anime/access/labels.ex:117
+#, elixir-autogen, elixir-format
+msgid "video.upload.retry"
+msgstr "Retry failed video transcoding"
+
+#: lib/anime/access/labels.ex:114
+#, elixir-autogen, elixir-format
+msgid "video.upload.view"
+msgstr "View all video uploads, processing status, progress and errors"
+
+#: lib/anime/access/labels.ex:122
+#, elixir-autogen, elixir-format
+msgid "video.voiceover.manage"
+msgstr "Create, edit and delete voice-overs"
+
+#: lib/anime/access/labels.ex:128
+#, elixir-autogen, elixir-format
+msgid "video.watch.play"
+msgstr "Watch public video: watch route, Watch and Continue buttons, Continue watching block and episode links"

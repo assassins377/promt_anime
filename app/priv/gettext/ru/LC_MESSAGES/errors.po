@@ -1,0 +1,43 @@
+msgid ""
+msgstr ""
+"Language: ru\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "has invalid format"
+msgstr "Неверный формат"
+
+msgid "is invalid"
+msgstr "Недопустимое значение"
+
+msgid "can't be blank"
+msgstr "Заполните поле"
+
+msgid "is reserved"
+msgstr "Этот ник зарезервирован"
+
+msgid "has already been taken"
+msgstr "Уже используется"
+
+msgid "must be accepted"
+msgstr "Необходимо согласие"
+
+msgid "does not match confirmation"
+msgstr "Пароли не совпадают"
+
+msgid "is too common"
+msgstr "Слишком распространённый пароль"
+
+msgid "needs a letter and a digit"
+msgstr "Нужны хотя бы одна буква и цифра"
+
+msgid "must be at most 72 UTF-8 bytes"
+msgstr "Пароль должен занимать не больше 72 байт UTF-8"
+
+msgid "must differ from your email and nickname"
+msgstr "Пароль должен отличаться от email и ника"
+
+msgid "should be at least %{count} character(s)"
+msgstr "Минимум %{count} символов"
+
+msgid "should be at most %{count} character(s)"
+msgstr "Максимум %{count} символов"

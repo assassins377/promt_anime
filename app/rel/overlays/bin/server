@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+if [ "$#" -ne 0 ]; then
+  echo 'Usage: bin/server' >&2
+  exit 2
+fi
+export PHX_SERVER=true
+exec "$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)/anime" start

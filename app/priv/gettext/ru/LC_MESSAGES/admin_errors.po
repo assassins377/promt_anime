@@ -1,0 +1,187 @@
+## "msgid"s in this file come from POT (.pot) files.
+###
+### Do not add, change, or remove "msgid"s manually here as
+### they're tied to the ones in the corresponding POT file
+### (with the same domain).
+###
+### Use "mix gettext.extract --merge" or "mix gettext.merge"
+### to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: ru\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100 != 11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10||n%100>=20) ? 1 : 2);\n"
+
+#: lib/anime_web/admin_errors.ex:78
+#, elixir-autogen, elixir-format
+msgid "Активных сессий для завершения нет."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:115
+#, elixir-autogen, elixir-format
+msgid "В изменениях есть неизвестное разрешение. Перечитайте матрицу и повторите выбор."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:59
+#, elixir-autogen, elixir-format
+msgid "Владелец защищён. Это действие над ролью или аккаунтом владельца недоступно."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:146
+#, elixir-autogen, elixir-format
+msgid "Выберите от 1 до 50 записей на текущей странице и повторите действие."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:180
+#, elixir-autogen, elixir-format
+msgid "Выберите причину блокировки. Для «Другое» нужен комментарий от 10 до 300 символов."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:38
+#, elixir-autogen, elixir-format
+msgid "Данные пользователя изменились в другом окне. Откройте форму заново и проверьте изменения."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:52
+#, elixir-autogen, elixir-format
+msgid "Действие над собственным аккаунтом запрещено. Для личных настроек откройте профиль."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:7
+#, elixir-autogen, elixir-format
+msgid "Дождитесь загрузки списка. Если запрос завершился ошибкой, повторите его."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:31
+#, elixir-autogen, elixir-format
+msgid "Запись изменилась после открытия формы. Обновите данные и повторите действие."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:27
+#, elixir-autogen, elixir-format
+msgid "Запись не найдена. Обновите список: её могли удалить."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:81
+#, elixir-autogen, elixir-format
+msgid "Изменений нет: запись уже содержит выбранные значения."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:85
+#, elixir-autogen, elixir-format
+msgid "Код системной роли менять нельзя. Измените только её название или значок."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:45
+#, elixir-autogen, elixir-format
+msgid "Матрица прав изменилась в другом окне. Отмените черновик, перечитайте матрицу и внесите изменения заново."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:206
+#, elixir-autogen, elixir-format
+msgid "Не удалось выполнить действие. Обновите страницу и повторите попытку; если ошибка останется, обратитесь к владельцу сайта."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:13
+#, elixir-autogen, elixir-format
+msgid "Не удалось загрузить список. Повторите запрос."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:21
+#, elixir-autogen, elixir-format
+msgid "Недостаточно прав для этого действия. Проверьте доступ или обратитесь к владельцу сайта."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:73
+#, elixir-autogen, elixir-format
+msgid "Недостаточно прав для этой цели или роли. Нельзя управлять более привилегированным пользователем или назначать недоступную роль."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:108
+#, elixir-autogen, elixir-format
+msgid "Нельзя выдать разрешения, которых нет у вас. Уберите их из изменений."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:122
+#, elixir-autogen, elixir-format
+msgid "Нельзя снять собственные разрешения через матрицу. Обратитесь к другому владельцу."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:66
+#, elixir-autogen, elixir-format
+msgid "Нельзя убрать последнего активного владельца. Сначала назначьте другого владельца."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:129
+#, elixir-autogen, elixir-format
+msgid "Нет подтверждённого набора изменений. Проверьте выбор и откройте подтверждение заново."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:153
+#, elixir-autogen, elixir-format
+msgid "Ник не совпадает. Для подтверждения введите точный ник пользователя."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:176
+#, elixir-autogen, elixir-format
+msgid "Пользователь не заблокирован. Снимать блокировку не требуется."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:170
+#, elixir-autogen, elixir-format
+msgid "Пользователь уже заблокирован. Обновите карточку и проверьте срок блокировки."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:135
+#, elixir-autogen, elixir-format
+msgid "Проверьте поля формы и исправьте отмеченные значения."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:101
+#, elixir-autogen, elixir-format
+msgid "Роль назначена пользователям или ещё используется. Перенесите пользователей в другую роль и обновите список."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:90
+#, elixir-autogen, elixir-format
+msgid "Системную роль удалить нельзя."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:200
+#, elixir-autogen, elixir-format
+msgid "Слишком много попыток. Подождите и повторите действие позже."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:17
+#, elixir-autogen, elixir-format
+msgid "Сначала выберите действие и подтвердите его в открывшемся окне."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:194
+#, elixir-autogen, elixir-format
+msgid "Срок ещё не наступил. Обновите данные и проверьте дату окончания."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:166
+#, elixir-autogen, elixir-format
+msgid "У аккаунта нет запроса на удаление, который можно отменить."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:160
+#, elixir-autogen, elixir-format
+msgid "Удаление этого аккаунта уже запрошено. Обновите карточку пользователя."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:187
+#, elixir-autogen, elixir-format
+msgid "Укажите срок блокировки от 1 до 3650 суток или выберите бессрочную блокировку."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:139
+#, elixir-autogen, elixir-format
+msgid "Это действие недоступно. Обновите страницу и выберите действие из списка."
+msgstr ""
+
+#: lib/anime_web/admin_errors.ex:94
+#, elixir-autogen, elixir-format
+msgid "Это роль новых регистраций. Сначала выберите другую роль по умолчанию."
+msgstr ""
