@@ -337,18 +337,24 @@ defmodule Anime.Accounts do
           [String.downcase(u.email), String.downcase(u.nick)]
         )
 
-        %{user_id: u.id, kind: "password_changed", locale: to_string(u.locale)}
+        event =
+          Audit.record(
+            Repo.preload(u, :role),
+            "password_change",
+            "User",
+            u.id,
+            :success,
+            audit_meta(meta)
+          )
+
+        %{
+          user_id: u.id,
+          audit_id: event.id,
+          kind: "password_changed",
+          locale: to_string(u.locale)
+        }
         |> Anime.Workers.Mail.new()
         |> Oban.insert!()
-
-        Audit.record(
-          Repo.preload(u, :role),
-          "password_change",
-          "User",
-          u.id,
-          :success,
-          audit_meta(meta)
-        )
 
         updated
 

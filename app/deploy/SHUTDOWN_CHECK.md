@@ -4,7 +4,9 @@
 Он получает HTTP/HTTPS server через публичный Bandit.PhoenixAdapter.bandit_pid
 и закрывает listener через ThousandIsland.suspend, не завершая активные соединения.
 shutdown_listener_test.exs проверяет отказ нового TCP и ответ200 начатого запроса;
-результат полного прогона ещё нужно подтвердить. Это НЕ общий90с drain.
+Полный CI36873575446 для0fd6d2b прошёл: tests-coverage, миграции/сиды,
+JS/runtime/журналы/пороги/security и release/preflight success, exit0.
+Это НЕ общий90с drain и НЕ запуск этой версии на стенде.
 Phoenix.Socket.PoolDrainer в установленной версии начинает phx_drain при terminate
 без30с ожидания; его стандартное поведение не заменяет требование grace period.
 

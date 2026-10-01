@@ -1,5 +1,14 @@
 defmodule Anime.Workers.Mail do
-  use Anime.Worker, queue: :mailers, max_attempts: 5
+  use Anime.Worker,
+    queue: :mailers,
+    max_attempts: 5,
+    unique: [
+      period: 60,
+      fields: [:worker, :args],
+      keys: [:token_id, :audit_id, :user_id, :kind],
+      states: [:available, :scheduled, :executing, :retryable, :completed, :cancelled, :discarded]
+    ]
+
   use Gettext, backend: AnimeWeb.Gettext
   import Swoosh.Email
   alias Anime.{Repo, Mailer, Accounts.User, Accounts.UserToken, Accounts.Tokens}
