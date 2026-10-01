@@ -48,6 +48,22 @@ jobs:
           git diff --exit-code -- mix.lock
       - name: Bootstrap verification (not the default-branch regression gate)
         run: bash dev/check_queue1_local.sh
+      - name: Show isolated test diagnostics on failure
+        if: failure()
+        run: |
+          for log in /tmp/anime-queue1-check.*/tests-coverage.log; do
+            test ! -f "$log" || tail -n 200 "$log"
+          done
+      - name: Preserve coverage and isolated test diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: queue1-checks-${{ github.sha }}
+          retention-days: 7
+          if-no-files-found: ignore
+          path: |
+            /tmp/anime-queue1-check.*/tests-coverage.log
+            app/cover/coverage.json
       - name: Build compatible release
         run: bash dev/check_release_local.sh
       - name: Package the release without test databases or credentials
