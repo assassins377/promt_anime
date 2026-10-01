@@ -64,6 +64,46 @@ defmodule Anime.ShutdownJobsTest do
 
   def query(_, _, _, owner), do: send(owner, :database_query)
 
+  test "background drain returns while an active job finishes and never restarts Oban" do
+    :persistent_term.put(@owner, self())
+    on_exit(fn -> :persistent_term.erase(@owner) end)
+    job = HeldJob.new(%{}) |> Oban.insert!()
+    background = __MODULE__.Background
+    tasks = __MODULE__.Tasks
+    start_supervised!({Task.Supervisor, name: tasks})
+
+    start_supervised!(
+      {Anime.Background,
+       name: background,
+       oban: [
+         name: @name,
+         repo: Repo,
+         queues: [maintenance: 1],
+         shutdown_grace_period: 3000,
+         testing: :disabled,
+         peer: Oban.Peers.Isolated,
+         notifier: Oban.Notifiers.Isolated,
+         stager: false,
+         lifeline: false,
+         plugins: []
+       ]}
+    )
+
+    producer = Oban.Registry.whereis(@name, {:producer, "maintenance"})
+    _ = Oban.Queues.Producer.check(producer)
+    :ok = Oban.Notifier.notify(@name, :insert, %{queue: "maintenance"})
+    assert_receive {:started, _, worker}, 2000
+    :ok = Anime.Shutdown.quiesce_jobs(@name)
+    {:ok, drain} = Anime.Background.drain(background, tasks)
+    ref = Process.monitor(drain)
+    assert Process.alive?(worker)
+    refute_receive {:DOWN, ^ref, _, _, _}, 50
+    send(worker, :finish)
+    assert_receive {:DOWN, ^ref, _, _, :normal}, 2000
+    assert Repo.get!(Oban.Job, job.id).state == "completed"
+    assert [{Oban, :undefined, :supervisor, _}] = Supervisor.which_children(background)
+  end
+
   defp await_completed(id, remaining) do
     if Repo.get!(Oban.Job, id).state != "completed" do
       assert remaining > 0, "running job did not finish"

@@ -23,6 +23,7 @@ defmodule AnimeWeb.ShutdownGate do
       path = session["shutdown_return_to"] || "/"
       {:halt, Phoenix.LiveView.redirect(socket, to: path)}
     else
+      if is_pid(socket.transport_pid), do: Anime.LiveTransports.track(socket.transport_pid)
       {:cont, socket}
     end
   end

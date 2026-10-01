@@ -51,6 +51,27 @@ defmodule AnimeWeb.ShutdownGateTest do
     assert result.redirected == {:redirect, %{to: "/", status: 302}}
   end
 
+  test "connected mounts register their transport but rejected mounts do not" do
+    socket = %Phoenix.LiveView.Socket{transport_pid: self()}
+    assert {:cont, ^socket} = ShutdownGate.on_mount(:default, %{}, %{}, socket)
+    assert self() in Anime.LiveTransports.snapshot()
+
+    other =
+      spawn(fn ->
+        receive do
+          :finish -> :ok
+        end
+      end)
+
+    on_exit(fn -> send(other, :finish) end)
+    Shutdown.begin_rejection()
+
+    assert {:halt, _} =
+             ShutdownGate.on_mount(:default, %{}, %{}, %{socket | transport_pid: other})
+
+    refute other in Anime.LiveTransports.snapshot()
+  end
+
   test "endpoint returns 503 with security headers without running login", %{conn: conn} do
     Shutdown.begin_rejection()
     response = post(conn, "/login", %{})

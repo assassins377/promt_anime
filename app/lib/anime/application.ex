@@ -22,9 +22,9 @@ defmodule Anime.Application do
       {Anime.Metrics.CacheSampler, []},
       Anime.Passwords,
       {Task.Supervisor, name: Anime.Tasks},
-      {Oban, Application.fetch_env!(:anime, Oban)},
+      {Anime.Background, []},
       {Anime.Metrics.ObanSampler, []},
-      AnimeWeb.Endpoint
+      {Anime.WebSupervisor, []}
     ]
 
     case Supervisor.start_link(children, strategy: :one_for_one, name: Anime.Supervisor) do
@@ -43,6 +43,8 @@ defmodule Anime.Application do
       Anime.Shutdown.prepare()
       Anime.Shutdown.stop_accepting(AnimeWeb.Endpoint)
       Anime.Shutdown.quiesce_jobs()
+      {:ok, _pid} = Anime.Background.drain()
+      Anime.Shutdown.drain_web(AnimeWeb.Endpoint)
     end
 
     state

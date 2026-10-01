@@ -9,7 +9,7 @@ config :anime, Anime.Repo,
   migration_timestamps: [type: :utc_datetime_usec]
 
 config :anime, AnimeWeb.Endpoint,
-  adapter: Bandit.PhoenixAdapter,
+  adapter: AnimeWeb.DrainingAdapter,
   url: [host: "localhost"],
   render_errors: [
     formats: [html: AnimeWeb.ErrorHTML, json: AnimeWeb.ErrorJSON],
