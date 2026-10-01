@@ -36,6 +36,21 @@ defmodule Anime.Workers.Mail do
     result
   end
 
+  # A hard Oban timeout terminates perform/1. Its executor emits this event
+  # outside the terminated process, after recording the terminal job state.
+  def audit_timeout(%{
+        state: :discard,
+        error: %Oban.TimeoutError{},
+        job: %Oban.Job{worker: "Anime.Workers.Mail"} = job
+      })
+      when job.attempt >= job.max_attempts do
+    Anime.Audit.record(nil, "mail_delivery_failed", mail_type(job.args), job.id, :error, %{
+      actor_label: "system:mail"
+    })
+  end
+
+  def audit_timeout(_), do: :ok
+
   defp mail_type(%{"token_id" => id}) do
     case Repo.get(UserToken, id) do
       %UserToken{context: :confirm} -> "confirm_email"
@@ -190,5 +205,12 @@ defmodule Anime.Workers.Mail do
       {:error, _} ->
         {:error, :delivery_failed}
     end
+  rescue
+    # Adapter exceptions may contain addresses, credentials or message bodies.
+    # Return the same safe outcome as a transient transport failure so Oban's
+    # persisted errors and the final-attempt audit never receive those details.
+    _ -> {:error, :delivery_failed}
+  catch
+    _, _ -> {:error, :delivery_failed}
   end
 end

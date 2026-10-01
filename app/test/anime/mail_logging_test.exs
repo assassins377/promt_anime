@@ -36,6 +36,13 @@ defmodule Anime.MailLoggingTest do
         :exit ->
           exit("PRIVATE-MAIL-SENTINEL")
 
+        :hang ->
+          send(config[:owner], :mail_started)
+
+          receive do
+            :never_sent -> :ok
+          end
+
         _ ->
           {:ok, %{receipt: "PRIVATE-MAIL-SENTINEL"}}
       end
@@ -263,6 +270,30 @@ defmodule Anime.MailLoggingTest do
     refute_received {:email, _}
   end
 
+  for mode <- [:raise, :throw, :exit] do
+    test "exhausted adapter #{mode} is audited and persisted without transport details" do
+      u = user()
+      job = Repo.one!(from j in Oban.Job, order_by: [desc: j.id], limit: 1)
+      Repo.update_all(from(j in Oban.Job, where: j.id == ^job.id), set: [max_attempts: 1])
+      Application.put_env(:anime, Mailer, adapter: Adapter, mode: unquote(mode))
+
+      output = capture_log(fn -> Oban.drain_queue(queue: :mailers, with_safety: true) end)
+      saved = Repo.get!(Oban.Job, job.id)
+      assert saved.state == "discarded"
+      entry = Repo.one!(from a in Anime.Audit, where: a.action == "mail_delivery_failed")
+      assert entry.object_type == "confirm_email"
+      assert entry.object_id == to_string(job.id)
+      assert entry.result == :error
+      assert Repo.get!(Anime.Accounts.User, u.id).status == u.status
+      assert inspect(saved.errors) =~ "delivery_failed"
+
+      for value <- [output, inspect(saved.errors), inspect(entry)],
+          private <- [@secret, u.email] do
+        refute value =~ private
+      end
+    end
+  end
+
   test "raised transport exception in a real job keeps correlation and retry without exposing it" do
     u = user()
     Application.put_env(:anime, Mailer, adapter: Adapter, mode: :raise)
@@ -279,5 +310,79 @@ defmodule Anime.MailLoggingTest do
     assert retry["request_id"] == @id
     assert retry["level"] == "warning"
     assert LogContext.current() == "caller-after-enqueue-123456"
+  end
+
+  @tag timeout: 45_000
+  test "real thirty-second Oban timeout audits the exhausted mail job" do
+    u = user()
+    job = Repo.one!(from j in Oban.Job, order_by: [desc: j.id], limit: 1)
+    Repo.update_all(from(j in Oban.Job, where: j.id == ^job.id), set: [max_attempts: 1])
+
+    Application.put_env(:anime, Mailer, adapter: Adapter, mode: :hang, owner: self())
+    name = __MODULE__.TimeoutInstance
+
+    output =
+      capture_log(fn ->
+        start_supervised!(
+          {Oban,
+           name: name,
+           repo: Repo,
+           queues: [mailers: 1],
+           testing: :disabled,
+           peer: Oban.Peers.Isolated,
+           notifier: Oban.Notifiers.Isolated,
+           stager: false,
+           lifeline: false,
+           plugins: []}
+        )
+
+        # The fixture enqueued on the default instance before this isolated
+        # producer existed, so notify this instance about the existing job.
+        :ok = Oban.Notifier.notify(name, :insert, %{queue: "mailers"})
+        assert_receive :mail_started, 5000
+        deadline = System.monotonic_time(:millisecond) + 35_000
+        await_failure(job.id, deadline)
+        assert Repo.get!(Oban.Job, job.id).state == "discarded"
+        :ok = Oban.Queues.stop_queue(Oban.config(name), "mailers")
+      end)
+
+    entry = Repo.one!(from a in Anime.Audit, where: a.action == "mail_delivery_failed")
+    assert entry.object_type == "confirm_email"
+    assert entry.object_id == to_string(job.id)
+    assert entry.result == :error
+    assert Repo.get!(Anime.Accounts.User, u.id).status == u.status
+    refute output =~ u.email
+    refute output =~ @secret
+    refute inspect(entry) =~ u.email
+  end
+
+  test "timeout audit ignores retrying jobs, other workers and non-timeout failures" do
+    job = %Oban.Job{worker: "Anime.Workers.Mail", attempt: 5, max_attempts: 5}
+    meta = %{job: job, state: :discard, error: %Oban.TimeoutError{}}
+
+    for ignored <- [
+          %{meta | state: :failure},
+          %{meta | job: %{job | attempt: 1}},
+          %{meta | job: %{job | worker: "Anime.Workers.Other"}},
+          %{meta | error: %RuntimeError{message: @secret}},
+          %{}
+        ] do
+      assert :ok = Anime.Workers.Mail.audit_timeout(ignored)
+    end
+
+    refute Repo.exists?(from a in Anime.Audit, where: a.action == "mail_delivery_failed")
+  end
+
+  defp await_failure(id, deadline) do
+    if Repo.exists?(
+         from a in Anime.Audit,
+           where: a.action == "mail_delivery_failed" and a.object_id == ^to_string(id)
+       ) do
+      :ok
+    else
+      assert System.monotonic_time(:millisecond) < deadline, "timeout audit not recorded"
+      Process.sleep(50)
+      await_failure(id, deadline)
+    end
   end
 end

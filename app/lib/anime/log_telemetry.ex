@@ -134,6 +134,7 @@ defmodule Anime.LogTelemetry do
     try do
       LogContext.with_id(LogContext.job_id(job), fn ->
         Log.emit(job_event(meta[:state], job), job_fields(job, measurements))
+        if phase == :exception, do: Anime.Workers.Mail.audit_timeout(meta)
       end)
     after
       LogContext.end_job(job)
