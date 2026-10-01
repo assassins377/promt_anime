@@ -21,6 +21,17 @@ defmodule Anime.Shutdown do
     :ok
   end
 
+  def stop_accepting(endpoint) do
+    for scheme <- [:http, :https] do
+      case Bandit.PhoenixAdapter.bandit_pid(endpoint, scheme) do
+        {:ok, pid} when is_pid(pid) -> :ok = ThousandIsland.suspend(pid)
+        {:error, :no_server_found} -> :ok
+      end
+    end
+
+    :ok
+  end
+
   def failures(checks) do
     if draining?() do
       [:shutdown]

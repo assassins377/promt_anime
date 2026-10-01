@@ -39,7 +39,11 @@ defmodule Anime.Application do
 
   @impl true
   def prep_stop(state) do
-    if Application.get_env(:anime, AnimeWeb.Endpoint, [])[:server], do: Anime.Shutdown.prepare()
+    if Application.get_env(:anime, AnimeWeb.Endpoint, [])[:server] do
+      Anime.Shutdown.prepare()
+      Anime.Shutdown.stop_accepting(AnimeWeb.Endpoint)
+    end
+
     state
   end
 

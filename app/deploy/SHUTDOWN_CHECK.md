@@ -1,5 +1,13 @@
 # Начальная фаза остановки веб-ноды
 
+Новый срез: после10с prepare вызывается Shutdown.stop_accepting(endpoint).
+Он получает HTTP/HTTPS server через публичный Bandit.PhoenixAdapter.bandit_pid
+и закрывает listener через ThousandIsland.suspend, не завершая активные соединения.
+shutdown_listener_test.exs проверяет отказ нового TCP и ответ200 начатого запроса;
+результат полного прогона ещё нужно подтвердить. Это НЕ общий90с drain.
+Phoenix.Socket.PoolDrainer в установленной версии начинает phx_drain при terminate
+без30с ожидания; его стандартное поведение не заменяет требование grace period.
+
 Реализовано в Anime.Application.prep_stop/1 и Anime.Shutdown:
 
 1. Для запущенного endpoint устанавливается локальный признак shutdown.

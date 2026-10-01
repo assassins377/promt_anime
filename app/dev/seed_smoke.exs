@@ -9,7 +9,10 @@ defmodule Queue1SeedSmoke do
   def run do
     true = Mix.env() == :test
     expected_dir = System.fetch_env!("QUEUE1_CHECK_DATA_DIR")
-    true = Regex.match?(~r"\A/tmp/anime-queue1-check\.[A-Za-z0-9]{8}/data\z", expected_dir)
+    true = Path.basename(expected_dir) == "data"
+    check_dir = Path.dirname(expected_dir)
+    true = Regex.match?(~r"\Aanime-queue1-check\.[A-Za-z0-9]{8}\z", Path.basename(check_dir))
+    true = Path.dirname(check_dir) == System.get_env("QUEUE1_CHECK_ROOT", "/tmp")
     [[^expected_dir]] = Repo.query!("SHOW data_directory").rows
     [["anime_test"]] = Repo.query!("SELECT current_database()").rows
     0 = Repo.aggregate(User, :count)

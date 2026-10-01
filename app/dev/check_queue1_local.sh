@@ -8,7 +8,8 @@ if [[ ${1:-} == --help ]]; then
     'Requires installed dependencies, PostgreSQL 18, Elixir/Mix and Node.' \
     'Creates its own temporary cluster on 127.0.0.1:59433; never uses DATABASE_URL.' \
     'QUEUE1_CHECK_PORT and QUEUE1_PG_BINDIR may override the port and PostgreSQL binaries.' \
-    'Stops its cluster on exit; preserves database, logs and schema snapshots in /tmp.' \
+    'QUEUE1_CHECK_ROOT may select an existing absolute temporary directory (default /tmp).' \
+    'Stops its cluster on exit; preserves database, logs and schema snapshots in the selected directory.' \
     'Runs full migration up/down/up, seed idempotency, per-module coverage, asset build/deploy and security.' \
     'Optional QUEUE1_BASE_COVERAGE plus QUEUE1_BASE_REVISION enable the 1pp regression gate.' \
     'Does not prove browser, SMTP/MinIO, cluster, CI, release or staging acceptance.'
@@ -36,8 +37,16 @@ done
 }
 
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.."
-check_dir=$(mktemp -d /tmp/anime-queue1-check.XXXXXXXX)
+check_root=${QUEUE1_CHECK_ROOT:-/tmp}
+[[ $check_root == /* && -d $check_root && -w $check_root ]] || {
+  printf '%s\n' 'QUEUE1_CHECK_ROOT must be an existing writable absolute directory.' >&2; exit 2;
+}
+check_root=$(cd -- "$check_root" && pwd -P)
+export QUEUE1_CHECK_ROOT="$check_root"
+check_dir=$(mktemp -d "$check_root/anime-queue1-check.XXXXXXXX")
 chmod 700 "$check_dir"
+# Mix locks and smoke-test temporary files must use the same isolated filesystem.
+export TMPDIR="$check_dir"
 cluster_started=false
 cleanup() {
   local result=$?
