@@ -1,5 +1,7 @@
 import Config
 
+config :anime, :app_env, "test"
+
 config :anime, Anime.Repo,
   url: System.get_env("TEST_DATABASE_URL", "ecto://postgres@127.0.0.1:59432/anime_test"),
   pool: Ecto.Adapters.SQL.Sandbox,

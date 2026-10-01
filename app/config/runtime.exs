@@ -4,6 +4,14 @@ if config_env() != :test do
   runtime = Anime.RuntimeConfig.load!()
 
   config :anime, :app_env, runtime.environment
+
+  config :anime,
+         :staging_mail_allowlist,
+         if(runtime.environment == "staging",
+           do: Anime.MailPolicy.parse!(System.get_env("STAGING_MAIL_ALLOWLIST")),
+           else: MapSet.new()
+         )
+
   config :anime, :node_role, runtime.node_role
   config :anime, :trusted_proxies, runtime.trusted_proxies
   config :anime, Anime.Metrics.Exporter, server: runtime.server, port: runtime.metrics_port

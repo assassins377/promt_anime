@@ -187,6 +187,10 @@ defmodule Anime.Workers.Mail do
   defp deliverable?(_, _), do: false
 
   defp send_mail(to, subject, body) do
+    if Anime.MailPolicy.allowed?(to), do: deliver_mail(to, subject, body), else: :ok
+  end
+
+  defp deliver_mail(to, subject, body) do
     from = Application.get_env(:anime, :mail_from, {"Anime", "no-reply@localhost"})
 
     case new()
