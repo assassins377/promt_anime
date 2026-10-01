@@ -42,6 +42,7 @@ defmodule Anime.Application do
     if Application.get_env(:anime, AnimeWeb.Endpoint, [])[:server] do
       Anime.Shutdown.prepare()
       Anime.Shutdown.stop_accepting(AnimeWeb.Endpoint)
+      Anime.Shutdown.quiesce_jobs()
     end
 
     state

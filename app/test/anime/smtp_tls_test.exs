@@ -30,7 +30,9 @@ defmodule Anime.SMTPTLSTest do
           ca_key,
           "-out",
           ca
-        ], stderr_to_stdout: true)
+        ],
+        stderr_to_stdout: true
+      )
 
     [{:Certificate, ca_der, _}] = ca |> File.read!() |> :public_key.pem_decode()
 
@@ -84,7 +86,9 @@ defmodule Anime.SMTPTLSTest do
               "copy",
               "-out",
               cert
-            ], stderr_to_stdout: true)
+            ],
+            stderr_to_stdout: true
+          )
 
         {name, %{cert: cert, key: key, der: ca_der}}
       end

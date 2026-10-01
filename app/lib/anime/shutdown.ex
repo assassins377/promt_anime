@@ -32,6 +32,19 @@ defmodule Anime.Shutdown do
     :ok
   end
 
+  def quiesce_jobs(name \\ Oban) do
+    # The pinned Basic engine pauses locally here, without a DB-backed notifier.
+    # Normal Oban termination still owns waiting for and stopping running jobs.
+    for queue <- ~w(mailers maintenance video_health) do
+      case Oban.Registry.whereis(name, {:producer, queue}) do
+        nil -> :ok
+        pid -> :ok = Oban.Queues.Producer.shutdown(pid)
+      end
+    end
+
+    :ok
+  end
+
   def failures(checks) do
     if draining?() do
       [:shutdown]
